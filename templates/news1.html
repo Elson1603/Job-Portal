@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsHub - Your Professional News Source</title>
+    <link rel="shortcut icon" href="static/favicon.png" type="image/svg+xml">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Black and Orange Color System */
+            --primary-50: #fff7ed;
+            --primary-100: #ffedd5;
+            --primary-200: #fed7aa;
+            --primary-300: #fdba74;
+            --primary-400: #fb923c;
+            --primary-500: #f97316;
+            --primary-600: #ea580c;
+            --primary-700: #c2410c;
+            --primary-800: #9a3412;
+            --primary-900: #7c2d12;
+
+            --secondary-50: #f8fafc;
+            --secondary-100: #f1f5f9;
+            --secondary-200: #e2e8f0;
+            --secondary-300: #cbd5e1;
+            --secondary-400: #94a3b8;
+            --secondary-500: #64748b;
+            --secondary-600: #475569;
+            --secondary-700: #334155;
+            --secondary-800: #1e293b;
+            --secondary-900: #0f172a;
+
+            --neutral-50: #fafafa;
+            --neutral-100: #f5f5f5;
+            --neutral-200: #e5e5e5;
+            --neutral-300: #d4d4d4;
+            --neutral-400: #a3a3a3;
+            --neutral-500: #737373;
+            --neutral-600: #525252;
+            --neutral-700: #404040;
+            --neutral-800: #262626;
+            --neutral-900: #171717;
+
+            --black: #000000;
+            --white: #ffffff;
+            --orange: #f97316;
+            --orange-light: #fb923c;
+            --orange-dark: #ea580c;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--black) 0%, var(--neutral-800) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 50%, var(--orange-dark) 100%);
+            --gradient-hero: linear-gradient(135deg, var(--neutral-50) 0%, var(--neutral-100) 100%);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-orange: 0 10px 25px -5px rgba(249, 115, 22, 0.3);
+
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --transition-fast: 150ms ease-in-out;
+            --transition-normal: 250ms ease-in-out;
+            --transition-slow: 350ms ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--gradient-hero);
+            color: var(--neutral-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      transition: var(--transition-normal);
+      height: 80px; /* Fixed height to prevent expansion */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) 0;
+      height: 80px; /* Match header height */
+    }
+
+    .logo {
+      font-family: var(--font-secondary);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--orange);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* User Authentication Styles */
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .username-display {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      border-radius: var(--radius-lg);
+      white-space: nowrap;
+    }
+
+    .username-display:hover {
+      color: var(--orange);
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 0.875rem;
+    }
+
+    .dropdown-menu {
+      position: absolute !important;
+      top: 100% !important;
+      right: 0 !important;
+      left: auto !important;
+      z-index: 1050 !important;
+      min-width: 160px;
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      padding: var(--space-2) 0;
+      margin-top: var(--space-2);
+      transform: translateY(-10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-fast);
+    }
+
+    .dropdown-menu.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-item {
+      display: block;
+      width: 100%;
+      padding: var(--space-2) var(--space-4);
+      color: var(--neutral-700);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      border: none;
+      background: none;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(249, 115, 22, 0.05);
+      color: var(--orange);
+    }
+
+    .dropdown-divider {
+      height: 1px;
+      background: var(--neutral-200);
+      border: none;
+      margin: var(--space-2) 0;
+    }
+
+    .login-button {
+      padding: var(--space-2) var(--space-4);
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 500;
+      border: 2px solid var(--orange);
+      border-radius: var(--radius-lg);
+      transition: var(--transition-fast);
+    }
+
+    .login-button:hover {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition-normal);
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: var(--white);
+      box-shadow: var(--shadow-orange);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--gradient-secondary);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--orange);
+      border: 2px solid var(--orange);
+    }
+
+    .btn-outline:hover {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: var(--space-16);
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .hero-title {
+            font-family: var(--font-secondary);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: var(--space-4);
+            position: relative;
+        }
+
+        .hero-title .highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-title .highlight::after {
+            content: '📰';
+            position: absolute;
+            right: -50px;
+            top: -10px;
+            font-size: 3rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--neutral-600);
+            max-width: 700px;
+            margin: 0 auto var(--space-8);
+            line-height: 1.7;
+        }
+
+        /* Search and Filter Section */
+        .search-filter-section {
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            margin-bottom: var(--space-12);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .search-filter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .search-filter-grid {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: var(--space-4);
+            align-items: center;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: var(--space-4) var(--space-6) var(--space-4) var(--space-12);
+            border: 2px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            transition: var(--transition-normal);
+            background: var(--white);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: var(--space-4);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--neutral-500);
+            font-size: 1.1rem;
+        }
+
+        .filter-select {
+            padding: var(--space-4) var(--space-6);
+            border: 2px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            background: var(--white);
+            transition: var(--transition-normal);
+            min-width: 150px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        .clear-filters {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-4) var(--space-6);
+            border: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-orange);
+        }
+
+        .clear-filters:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Progress Container */
+        .progress-container {
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            margin-bottom: var(--space-12);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .progress-title {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: var(--space-4);
+        }
+
+        .progress-bar {
+            background: var(--neutral-200);
+            height: 24px;
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin: var(--space-6) 0;
+            position: relative;
+        }
+
+        .progress-fill {
+            background: var(--gradient-primary);
+            height: 100%;
+            width: 0%;
+            transition: width 1s ease;
+            position: relative;
+            border-radius: var(--radius-full);
+        }
+
+        .progress-percentage {
+            position: absolute;
+            right: 10px;
+            color: var(--white);
+            font-weight: 700;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.875rem;
+        }
+
+        .progress-description {
+            color: var(--neutral-600);
+            font-size: 1rem;
+        }
+
+        /* News Grid */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: var(--space-8);
+            margin-bottom: var(--space-12);
+        }
+
+        /* News Card Styles */
+        .news-card {
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            border: 1px solid var(--neutral-200);
+            transition: var(--transition-normal);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+            position: relative;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .news-card.read {
+            opacity: 0.8;
+        }
+
+        .news-card.read::before {
+            content: '✓';
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            background: var(--gradient-primary);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition-normal);
+        }
+
+        .news-card:hover .news-image {
+            transform: scale(1.05);
+        }
+
+        .news-header {
+            padding: var(--space-6) var(--space-8);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .news-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+            font-size: 0.875rem;
+            color: var(--neutral-500);
+        }
+
+        .category-badge {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .news-title {
+            font-family: var(--font-secondary);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: var(--space-4);
+            line-height: 1.4;
+        }
+
+        .news-summary {
+            color: var(--neutral-600);
+            line-height: 1.6;
+            margin-bottom: var(--space-6);
+        }
+
+        .news-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .news-stats {
+            display: flex;
+            gap: var(--space-4);
+            font-size: 0.875rem;
+            color: var(--neutral-500);
+        }
+
+        .news-stats span {
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+
+        .expand-btn {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-lg);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .expand-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-orange);
+        }
+
+        .expand-btn.expanded {
+            background: var(--gradient-secondary);
+        }
+
+        .news-content {
+            padding: 0 var(--space-8) var(--space-8);
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .news-content.active {
+            display: block;
+        }
+
+        .news-content p {
+            margin-bottom: var(--space-4);
+            line-height: 1.7;
+            color: var(--neutral-700);
+        }
+
+        .news-content ul {
+            margin: var(--space-4) 0;
+            padding-left: var(--space-6);
+        }
+
+        .news-content li {
+            margin-bottom: var(--space-2);
+            color: var(--neutral-700);
+        }
+
+        .news-content strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .content-actions {
+            display: flex;
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+            padding-top: var(--space-6);
+            border-top: 1px solid var(--neutral-200);
+        }
+
+        .action-btn {
+            background: transparent;
+            border: 2px solid var(--neutral-200);
+            color: var(--neutral-600);
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .action-btn:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        .action-btn.active {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-color: var(--orange);
+        }
+
+        /* Loading Animation */
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: var(--space-20);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--neutral-200);
+            border-top: 3px solid var(--orange);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: var(--space-20) 0 var(--space-8);
+            margin-top: var(--space-20);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-6);
+            color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-3);
+        }
+
+        .footer-links a {
+            color: var(--neutral-300);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange);
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+
+        .social-link:hover {
+            background: var(--orange);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-700);
+            padding-top: var(--space-8);
+            text-align: center;
+            color: var(--neutral-400);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .search-filter-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title .highlight::after {
+                right: -30px;
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .news-card:nth-child(1) { animation-delay: 0.1s; }
+        .news-card:nth-child(2) { animation-delay: 0.2s; }
+        .news-card:nth-child(3) { animation-delay: 0.3s; }
+        .news-card:nth-child(4) { animation-delay: 0.4s; }
+        .news-card:nth-child(5) { animation-delay: 0.5s; }
+        .news-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: var(--space-4) var(--space-5);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+            max-width: 300px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .notification-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .notification-info {
+            background: var(--orange);
+            color: white;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: var(--space-20);
+            color: var(--neutral-500);
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: var(--space-4);
+            color: var(--neutral-400);
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-4);
+            color: var(--neutral-700);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+  {% include 'header.html' %}
+    <main>
+        <div class="container main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h1 class="hero-title">Stay Informed with <span class="highlight">NewsHub</span></h1>
+                <p class="hero-subtitle">
+                    Your trusted source for breaking news, in-depth analysis, and professional insights from around the world.
+                </p>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-filter-grid">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search articles..." id="searchInput">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="technology">Technology</option>
+                        <option value="business">Business</option>
+                        <option value="health">Health</option>
+                        <option value="sports">Sports</option>
+                        <option value="science">Science</option>
+                    </select>
+                    <button class="clear-filters" onclick="clearFilters()">
+                        <i class="fas fa-times" style="margin-right: 6px;"></i>
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Progress Container -->
+            <div class="progress-container">
+                <h2 class="progress-title">Reading Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill">
+                        <span class="progress-percentage" id="progressPercentage">0%</span>
+                    </div>
+                </div>
+                <p class="progress-description">Track your reading progress and stay informed with the latest news!</p>
+            </div>
+
+            <!-- Loading Container -->
+            <div class="loading-container" id="loadingContainer">
+                <div class="loading-spinner"></div>
+            </div>
+
+            <!-- News Grid -->
+            <div class="news-grid" id="newsGrid">
+                <!-- News articles will be dynamically loaded here -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No articles found</h3>
+                <p>Try adjusting your search terms or filters to find more articles.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+  {% include 'footer.html' %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Sample news data
+        const newsData = [
+            {
+                id: '1',
+                title: 'Tech Job Market Experiences Major Resurgence in 2025',
+                summary: 'After a period of uncertainty, the tech job market is experiencing a resurgence in 2025 with 228,000 new positions added in January alone.',
+                content: `After a period of uncertainty, the tech job market is experiencing a resurgence in 2025. In January alone, employers added approximately 228,000 new technology positions, marking the second consecutive month of growth. Currently, there are over 476,000 open tech roles, indicating a robust demand for skilled professionals.
+
+However, the nature of these roles is evolving. There's a noticeable shift towards contract-based positions, with a 25% increase in contract vacancies this year. This trend suggests that companies are seeking flexibility in their hiring practices, often opting for short-term engagements that can lead to longer-term opportunities.
+
+Geographically, Washington D.C. leads in tech job postings, followed by New York City, Dallas, and Chicago. This distribution reflects a diverse range of opportunities across various regions.
+
+<strong>Key sectors driving this growth include:</strong>
+• Artificial Intelligence and Machine Learning
+• Cloud Computing and Infrastructure
+• Cybersecurity
+• Software Development
+• Data Analytics and Science
+
+The average salary for tech positions has also increased by 12% compared to last year, with senior roles commanding premium compensation packages. Companies are competing fiercely for top talent, offering remote work flexibility, comprehensive benefits, and professional development opportunities.`,
+                category: 'technology',
+                author: 'Sarah Johnson',
+                publishedAt: '2025-01-15T09:00:00Z',
+                readTime: '4 min read',
+                image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+                likes: 234,
+                comments: 67,
+                views: 1250
+            },
+            {
+                id: '2',
+                title: 'Remote Work Evolution: Hybrid Models Define the Future',
+                summary: 'Companies are embracing hybrid work models as the standard, with 73% of organizations planning to maintain flexible work arrangements.',
+                content: `The remote work revolution continues to evolve, with hybrid models becoming the dominant approach for most organizations. According to recent studies, 73% of companies plan to maintain flexible work arrangements permanently, marking a fundamental shift in how we think about the workplace.
+
+This transformation has been driven by several factors:
+
+<strong>Employee Preferences:</strong> Surveys show that 87% of employees prefer hybrid or fully remote work options, citing improved work-life balance and reduced commute stress.
+
+<strong>Productivity Gains:</strong> Companies report 20-30% increases in productivity among remote and hybrid workers, challenging traditional office-centric models.
+
+<strong>Cost Savings:</strong> Organizations are saving an average of $11,000 per employee annually through reduced office space requirements and associated costs.
+
+<strong>Talent Access:</strong> Remote work has expanded the talent pool globally, allowing companies to hire the best candidates regardless of location.
+
+However, challenges remain:
+• Maintaining company culture and team cohesion
+• Ensuring effective communication and collaboration
+• Managing performance and accountability
+• Providing adequate technology and support
+
+Leading companies are investing heavily in digital collaboration tools, virtual team-building activities, and flexible office spaces designed for occasional use.`,
+                category: 'business',
+                author: 'Michael Chen',
+                publishedAt: '2025-01-14T14:30:00Z',
+                readTime: '5 min read',
+                image: 'https://images.pexels.com/photos/4065906/pexels-photo-4065906.jpeg?auto=compress&cs=tinysrgb&w=800',
+                likes: 189,
+                comments: 43,
+                views: 892
+            },
+            {
+                id: '3',
+                title: 'Breakthrough in Artificial Intelligence: New Model Achieves 95% Accuracy',
+                summary: 'Researchers have developed a new AI model that achieves unprecedented accuracy in medical diagnosis, potentially revolutionizing healthcare.',
+                content: `A groundbreaking advancement in artificial intelligence has emerged from Stanford University, where researchers have developed a new AI model capable of achieving 95% accuracy in medical diagnosis across multiple specialties. This breakthrough could fundamentally transform healthcare delivery worldwide.
+
+<strong>Key Features of the New Model:</strong>
+• Multi-modal learning capabilities combining text, images, and patient data
+• Real-time diagnostic recommendations
+• Integration with existing electronic health records
+• Continuous learning from new cases and outcomes
+
+The model has been tested across various medical conditions including:
+• Cardiovascular diseases
+• Cancer detection and staging
+• Neurological disorders
+• Infectious diseases
+• Rare genetic conditions
+
+<strong>Clinical Trial Results:</strong>
+In a comprehensive study involving 50,000 patient cases across 15 hospitals, the AI system demonstrated remarkable performance. It correctly identified conditions in 95% of cases, compared to the 89% accuracy rate of human specialists working alone.
+
+<strong>Implications for Healthcare:</strong>
+• Reduced diagnostic errors and improved patient outcomes
+• Faster diagnosis in emergency situations
+• Enhanced accessibility to expert-level diagnosis in underserved areas
+• Cost reduction through more efficient healthcare delivery
+
+The research team is now working with regulatory bodies to ensure proper validation and safety protocols before widespread implementation.`,
+                category: 'technology',
+                author: 'Dr. Emily Rodriguez',
+                publishedAt: '2025-01-13T11:15:00Z',
+                readTime: '6 min read',
+                image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
+                likes: 567,
+                comments: 128,
+                views: 2340
+            },
+            {
+                id: '4',
+                title: 'Global Climate Initiative Launches with $50 Billion Investment',
+                summary: 'A coalition of 50 countries announces the largest climate action initiative in history, focusing on renewable energy and carbon capture technology.',
+                content: `In an unprecedented move, a coalition of 50 countries has announced the launch of the Global Climate Action Initiative (GCAI), backed by a historic $50 billion investment. This initiative represents the largest coordinated international effort to combat climate change through technological innovation and sustainable practices.
+
+<strong>Initiative Components:</strong>
+• $20 billion for renewable energy infrastructure
+• $15 billion for carbon capture and storage technology
+• $10 billion for sustainable transportation systems
+• $5 billion for climate adaptation measures
+
+<strong>Participating Countries:</strong>
+The initiative includes major economies such as the United States, China, Germany, Japan, and India, along with 45 other nations representing diverse geographical regions and economic development levels.
+
+<strong>Key Technologies Being Developed:</strong>
+• Next-generation solar panels with 40% efficiency
+• Advanced wind turbines for offshore installations
+• Revolutionary battery storage systems
+• Direct air capture facilities
+• Green hydrogen production plants
+
+<strong>Timeline and Milestones:</strong>
+• 2025: Initial infrastructure deployment begins
+• 2027: First major renewable energy plants operational
+• 2030: 50% reduction in participating countries' carbon emissions
+• 2035: Achievement of net-zero emissions for the coalition
+
+The initiative is expected to create over 2 million jobs globally and accelerate the transition to clean energy by at least a decade.`,
+                category: 'science',
+                author: 'James Thompson',
+                publishedAt: '2025-01-12T16:45:00Z',
+                readTime: '5 min read',
+                image: 'https://images.pexels.com/photos/9800029/pexels-photo-9800029.jpeg?auto=compress&cs=tinysrgb&w=800',
+                likes: 421,
+                comments: 89,
+                views: 1678
+            },
+            {
+                id: '5',
+                title: 'Mental Health Revolution: Digital Therapy Shows Remarkable Success',
+                summary: 'New digital therapy platforms are showing 85% success rates in treating anxiety and depression, making mental health care more accessible.',
+                content: `A revolutionary approach to mental health treatment is gaining momentum as digital therapy platforms demonstrate remarkable success rates. Recent studies show that these innovative solutions are achieving 85% success rates in treating anxiety and depression, potentially transforming how we approach mental health care.
+
+<strong>Platform Features:</strong>
+• AI-powered personalized treatment plans
+• 24/7 availability and support
+• Integration with wearable devices for real-time monitoring
+• Virtual reality therapy sessions
+• Peer support communities
+
+<strong>Clinical Evidence:</strong>
+A comprehensive study involving 10,000 participants across 12 countries revealed significant improvements in mental health outcomes. Participants using digital therapy platforms showed:
+• 70% reduction in anxiety symptoms
+• 65% reduction in depression scores
+• 80% improvement in overall life satisfaction
+• 90% adherence to treatment plans
+
+<strong>Accessibility Benefits:</strong>
+• Cost-effective alternative to traditional therapy
+• Eliminates geographical barriers
+• Reduces stigma associated with seeking help
+• Provides immediate support during crisis situations
+• Offers culturally sensitive treatment options
+
+<strong>Types of Digital Interventions:</strong>
+• Cognitive Behavioral Therapy (CBT) apps
+• Mindfulness and meditation programs
+• Virtual reality exposure therapy
+• AI-powered chatbots for immediate support
+• Biometric monitoring and feedback systems
+
+Leading healthcare providers are now integrating these platforms into their standard care protocols, making mental health support more accessible than ever before.`,
+                category: 'health',
+                author: 'Dr. Lisa Park',
+                publishedAt: '2025-01-11T13:20:00Z',
+                readTime: '4 min read',
+                image: 'https://images.pexels.com/photos/7176319/pexels-photo-7176319.jpeg?auto=compress&cs=tinysrgb&w=800',
+                likes: 312,
+                comments: 76,
+                views: 1456
+            },
+            {
+                id: '6',
+                title: 'Sports Technology: AI Coaching Transforms Athletic Performance',
+                summary: 'Professional athletes are using AI-powered coaching systems to enhance performance, with some seeing 30% improvement in key metrics.',
+                content: `The world of professional sports is experiencing a technological revolution as AI-powered coaching systems are transforming how athletes train and compete. Recent implementations across various sports have shown remarkable results, with some athletes experiencing up to 30% improvement in key performance metrics.
+
+<strong>AI Coaching Capabilities:</strong>
+• Real-time biomechanical analysis
+• Personalized training program optimization
+• Injury prevention and recovery planning
+• Performance prediction and goal setting
+• Nutrition and sleep optimization
+
+<strong>Sports Applications:</strong>
+• Tennis: Serve technique analysis and improvement
+• Basketball: Shooting form optimization and game strategy
+• Football: Play analysis and tactical decision-making
+• Swimming: Stroke efficiency and endurance training
+• Track and Field: Technique refinement and training periodization
+
+<strong>Performance Improvements Observed:</strong>
+• 25% reduction in training-related injuries
+• 20% improvement in technique consistency
+• 15% increase in overall performance metrics
+• 30% faster skill acquisition for new techniques
+• 40% better recovery and training load management
+
+<strong>Technology Components:</strong>
+• Computer vision for movement analysis
+• Wearable sensors for real-time data collection
+• Machine learning algorithms for pattern recognition
+• Virtual reality for simulation training
+• Predictive analytics for performance forecasting
+
+Professional teams across major leagues are investing heavily in these technologies, with early adopters gaining significant competitive advantages. The democratization of these tools is also beginning to benefit amateur athletes and youth sports programs.`,
+                category: 'sports',
+                author: 'Marcus Williams',
+                publishedAt: '2025-01-10T10:30:00Z',
+                readTime: '5 min read',
+                image: 'https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg?auto=compress&cs=tinysrgb&w=800',
+                likes: 198,
+                comments: 45,
+                views: 987
+            }
+        ];
+
+        // Global variables
+        let allArticles = [];
+        let filteredArticles = [];
+        let readArticles = new Set();
+        let favoriteArticles = new Set();
+        let expandedArticles = new Set();
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            setupEventListeners();
+            loadSavedData();
+            simulateLoading();
+        });
+
+        function initializeApp() {
+            allArticles = [...newsData];
+            filteredArticles = [...allArticles];
+            initializeAnimations();
+        }
+
+        function setupEventListeners() {
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', handleSearch);
+            
+            // Category filter
+            document.getElementById('categoryFilter').addEventListener('change', handleCategoryFilter);
+            
+            // Header background on scroll
+            window.addEventListener('scroll', handleScroll);
+            
+            // Initialize intersection observer for animations
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                // Will be used to observe news cards when they're created
+                window.newsObserver = observer;
+            }
+        }
+
+        function initializeAnimations() {
+            // Animate progress bar on load
+            setTimeout(() => {
+                updateProgress();
+            }, 500);
+        }
+
+        function simulateLoading() {
+            const loadingContainer = document.getElementById('loadingContainer');
+            const newsGrid = document.getElementById('newsGrid');
+            
+            // Show loading for 2 seconds
+            setTimeout(() => {
+                loadingContainer.style.display = 'none';
+                renderNews();
+            }, 2000);
+        }
+
+        function renderNews() {
+            const newsGrid = document.getElementById('newsGrid');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (filteredArticles.length === 0) {
+                newsGrid.innerHTML = '';
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            emptyState.style.display = 'none';
+            
+            newsGrid.innerHTML = filteredArticles.map(article => `
+                <div class="news-card ${readArticles.has(article.id) ? 'read' : ''}" id="card-${article.id}">
+                    <img src="${article.image}" alt="${article.title}" class="news-image">
+                    <div class="news-header" onclick="toggleExpand('${article.id}')">
+                        <div class="news-meta">
+                            <span class="category-badge">${article.category}</span>
+                            <span><i class="fas fa-user"></i> ${article.author}</span>
+                            <span><i class="fas fa-clock"></i> ${article.readTime}</span>
+                            <span><i class="fas fa-calendar"></i> ${formatDate(article.publishedAt)}</span>
+                        </div>
+                        <h3 class="news-title">${article.title}</h3>
+                        <p class="news-summary">${article.summary}</p>
+                        <div class="news-actions">
+                            <div class="news-stats">
+                                <span><i class="fas fa-heart"></i> ${article.likes}</span>
+                                <span><i class="fas fa-comment"></i> ${article.comments}</span>
+                                <span><i class="fas fa-eye"></i> ${article.views}</span>
+                            </div>
+                            <button class="expand-btn ${expandedArticles.has(article.id) ? 'expanded' : ''}" id="btn-${article.id}">
+                                <i class="fas fa-${expandedArticles.has(article.id) ? 'chevron-up' : 'chevron-down'}"></i>
+                                ${expandedArticles.has(article.id) ? 'Collapse' : 'Read More'}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="news-content ${expandedArticles.has(article.id) ? 'active' : ''}" id="content-${article.id}">
+                        ${formatContent(article.content)}
+                        <div class="content-actions">
+                            <button class="action-btn ${favoriteArticles.has(article.id) ? 'active' : ''}" onclick="toggleFavorite('${article.id}')">
+                                <i class="fas fa-heart"></i>
+                                ${favoriteArticles.has(article.id) ? 'Favorited' : 'Favorite'}
+                            </button>
+                            <button class="action-btn" onclick="shareArticle('${article.id}')">
+                                <i class="fas fa-share-alt"></i>
+                                Share
+                            </button>
+                            <button class="action-btn ${readArticles.has(article.id) ? 'active' : ''}" onclick="markAsRead('${article.id}')">
+                                <i class="fas fa-check"></i>
+                                ${readArticles.has(article.id) ? 'Read' : 'Mark as Read'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Observe new cards for animation
+            if (window.newsObserver) {
+                document.querySelectorAll('.news-card').forEach(card => {
+                    window.newsObserver.observe(card);
+                });
+            }
+        }
+
+        function formatContent(content) {
+            return content
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/\n/g, '<br>')
+                .replace(/^/, '<p>')
+                .replace(/$/, '</p>')
+                .replace(/• /g, '<li>')
+                .replace(/<li>/g, '</li><li>')
+                .replace(/<\/li><li>/g, '<li>')
+                .replace(/(<li>.*?<\/li>)/gs, '<ul>$1</ul>')
+                .replace(/<ul><\/li>/g, '<ul>')
+                .replace(/<\/li><\/ul>/g, '</ul>');
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                month: 'short', 
+                day: 'numeric', 
+                year: 'numeric' 
+            });
+        }
+
+        function toggleExpand(articleId) {
+            const content = document.getElementById(`content-${articleId}`);
+            const button = document.getElementById(`btn-${articleId}`);
+            const card = document.getElementById(`card-${articleId}`);
+            
+            if (expandedArticles.has(articleId)) {
+                // Collapse
+                expandedArticles.delete(articleId);
+                content.classList.remove('active');
+                button.innerHTML = '<i class="fas fa-chevron-down"></i> Read More';
+                button.classList.remove('expanded');
+            } else {
+                // Expand
+                expandedArticles.add(articleId);
+                content.classList.add('active');
+                button.innerHTML = '<i class="fas fa-chevron-up"></i> Collapse';
+                button.classList.add('expanded');
+                
+                // Scroll to card
+                setTimeout(() => {
+                    card.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start',
+                        inline: 'nearest'
+                    });
+                }, 100);
+            }
+            
+            saveData();
+        }
+
+        function toggleFavorite(articleId) {
+            const button = event.target.closest('.action-btn');
+            
+            if (favoriteArticles.has(articleId)) {
+                favoriteArticles.delete(articleId);
+                button.innerHTML = '<i class="fas fa-heart"></i> Favorite';
+                button.classList.remove('active');
+                showNotification('Article removed from favorites', 'info');
+            } else {
+                favoriteArticles.add(articleId);
+                button.innerHTML = '<i class="fas fa-heart"></i> Favorited';
+                button.classList.add('active');
+                showNotification('Article added to favorites!', 'success');
+            }
+            
+            saveData();
+        }
+
+        function shareArticle(articleId) {
+            const article = allArticles.find(a => a.id === articleId);
+            if (article) {
+                if (navigator.share) {
+                    navigator.share({
+                        title: article.title,
+                        text: article.summary,
+                        url: window.location.href
+                    });
+                } else {
+                    // Fallback to copy to clipboard
+                    const shareText = `${article.title}\n\n${article.summary}\n\n${window.location.href}`;
+                    navigator.clipboard.writeText(shareText).then(() => {
+                        showNotification('Article link copied to clipboard!', 'success');
+                    });
+                }
+            }
+        }
+
+        function markAsRead(articleId) {
+            const button = event.target.closest('.action-btn');
+            const card = document.getElementById(`card-${articleId}`);
+            
+            if (readArticles.has(articleId)) {
+                readArticles.delete(articleId);
+                button.innerHTML = '<i class="fas fa-check"></i> Mark as Read';
+                button.classList.remove('active');
+                card.classList.remove('read');
+            } else {
+                readArticles.add(articleId);
+                button.innerHTML = '<i class="fas fa-check"></i> Read';
+                button.classList.add('active');
+                card.classList.add('read');
+                showNotification('Article marked as read!', 'success');
+            }
+            
+            updateProgress();
+            saveData();
+        }
+
+        function handleSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            
+            filteredArticles = allArticles.filter(article => {
+                const matchesSearch = article.title.toLowerCase().includes(searchTerm) ||
+                                    article.summary.toLowerCase().includes(searchTerm) ||
+                                    article.content.toLowerCase().includes(searchTerm);
+                const matchesCategory = category === 'all' || article.category === category;
+                
+                return matchesSearch && matchesCategory;
+            });
+            
+            renderNews();
+        }
+
+        function handleCategoryFilter() {
+            handleSearch(); // Reuse search logic
+        }
+
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('categoryFilter').value = 'all';
+            filteredArticles = [...allArticles];
+            renderNews();
+            showNotification('Filters cleared', 'info');
+        }
+
+        function handleScroll() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        }
+
+        function updateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            const progressPercentage = document.getElementById('progressPercentage');
+            
+            const total = allArticles.length;
+            const read = readArticles.size;
+            const percentage = total > 0 ? Math.round((read / total) * 100) : 0;
+            
+            setTimeout(() => {
+                progressFill.style.width = percentage + '%';
+                progressPercentage.textContent = percentage + '%';
+            }, 100);
+
+            // Update progress bar color based on completion
+            if (percentage === 100) {
+                progressFill.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+            } else if (percentage >= 75) {
+                progressFill.style.background = 'linear-gradient(90deg, #f59e0b, #d97706)';
+            } else {
+                progressFill.style.background = 'var(--gradient-primary)';
+            }
+        }
+
+        function saveData() {
+            localStorage.setItem('newsHub_readArticles', JSON.stringify(Array.from(readArticles)));
+            localStorage.setItem('newsHub_favoriteArticles', JSON.stringify(Array.from(favoriteArticles)));
+            localStorage.setItem('newsHub_expandedArticles', JSON.stringify(Array.from(expandedArticles)));
+            localStorage.setItem('newsHub_lastSave', new Date().toISOString());
+        }
+
+        function loadSavedData() {
+            const savedRead = localStorage.getItem('newsHub_readArticles');
+            const savedFavorites = localStorage.getItem('newsHub_favoriteArticles');
+            const savedExpanded = localStorage.getItem('newsHub_expandedArticles');
+            
+            if (savedRead) {
+                readArticles = new Set(JSON.parse(savedRead));
+            }
+            if (savedFavorites) {
+                favoriteArticles = new Set(JSON.parse(savedFavorites));
+            }
+            if (savedExpanded) {
+                expandedArticles = new Set(JSON.parse(savedExpanded));
+            }
+            
+            const lastSave = localStorage.getItem('newsHub_lastSave');
+            if (lastSave && (readArticles.size > 0 || favoriteArticles.size > 0)) {
+                const date = new Date(lastSave).toLocaleDateString();
+                showNotification(`Welcome back! Your reading progress from ${date} has been restored.`, 'info');
+            }
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            
+            const icon = type === 'success' ? 'fa-check-circle' : 
+                        type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle';
+            
+            notification.innerHTML = `
+                <i class="fas ${icon}" style="margin-right: 8px;"></i>
+                ${message}
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => notification.remove(), 300);
+            }, 4000);
+        }
+
+        // Export functionality
+        function exportReadingProgress() {
+            const exportData = {
+                exportDate: new Date().toISOString(),
+                totalArticles: allArticles.length,
+                readArticles: Array.from(readArticles),
+                favoriteArticles: Array.from(favoriteArticles),
+                readingProgress: `${readArticles.size}/${allArticles.length} (${Math.round((readArticles.size / allArticles.length) * 100)}%)`
+            };
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", "news_reading_progress.json");
+            document.body.appendChild(downloadAnchorNode);
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+            
+            showNotification('Reading progress exported successfully!', 'success');
+        }
+
+        // Make functions globally available
+        window.clearFilters = clearFilters;
+        window.toggleExpand = toggleExpand;
+        window.toggleFavorite = toggleFavorite;
+        window.shareArticle = shareArticle;
+        window.markAsRead = markAsRead;
+        window.exportReadingProgress = exportReadingProgress;
+    </script>
+</body>
+</html>

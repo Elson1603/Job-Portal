@@ -1,0 +1,41 @@
+<!-- templates/resume/base_resume.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="resume-builder-container">
+    <div class="sidebar">
+        <h4>Resume Builder</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link {% if active_section == 'basic' %}active{% endif %}" 
+                   href="{% url 'edit_resume_basic' resume.id %}">Basic Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if active_section == 'education' %}active{% endif %}" 
+                   href="{% url 'edit_resume_education' resume.id %}">Education</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if active_section == 'experience' %}active{% endif %}" 
+                   href="{% url 'edit_resume_experience' resume.id %}">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if active_section == 'skills' %}active{% endif %}" 
+                   href="{% url 'edit_resume_skills' resume.id %}">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if active_section == 'projects' %}active{% endif %}" 
+                   href="{% url 'edit_resume_projects' resume.id %}">Projects</a>
+            </li>
+        </ul>
+        
+        <div class="actions mt-4">
+            <a href="{% url 'preview_resume' resume.id %}" class="btn btn-outline-primary mb-2 w-100">Preview</a>
+            <a href="{% url 'download_resume_pdf' resume.id %}" class="btn btn-primary w-100">Download PDF</a>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        {% block resume_content %}{% endblock %}
+    </div>
+</div>
+{% endblock %}

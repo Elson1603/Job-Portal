@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Jobify - AI-Powered Job Platform</title>
+    <link rel="shortcut icon" href="static/favicon.png" type="image/svg+xml">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Black and Orange Color System */
+            --primary-50: #fff7ed;
+            --primary-100: #ffedd5;
+            --primary-200: #fed7aa;
+            --primary-300: #fdba74;
+            --primary-400: #fb923c;
+            --primary-500: #f97316;
+            --primary-600: #ea580c;
+            --primary-700: #c2410c;
+            --primary-800: #9a3412;
+            --primary-900: #7c2d12;
+
+            --secondary-50: #f8fafc;
+            --secondary-100: #f1f5f9;
+            --secondary-200: #e2e8f0;
+            --secondary-300: #cbd5e1;
+            --secondary-400: #94a3b8;
+            --secondary-500: #64748b;
+            --secondary-600: #475569;
+            --secondary-700: #334155;
+            --secondary-800: #1e293b;
+            --secondary-900: #0f172a;
+
+            --neutral-50: #fafafa;
+            --neutral-100: #f5f5f5;
+            --neutral-200: #e5e5e5;
+            --neutral-300: #d4d4d4;
+            --neutral-400: #a3a3a3;
+            --neutral-500: #737373;
+            --neutral-600: #525252;
+            --neutral-700: #404040;
+            --neutral-800: #262626;
+            --neutral-900: #171717;
+
+            --black: #000000;
+            --white: #ffffff;
+            --orange: #f97316;
+            --orange-light: #fb923c;
+            --orange-dark: #ea580c;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--black) 0%, var(--neutral-800) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 50%, var(--orange-dark) 100%);
+            --gradient-hero: linear-gradient(135deg, var(--neutral-50) 0%, var(--neutral-100) 100%);
+            --gradient-success: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            --gradient-info: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-orange: 0 10px 25px -5px rgba(249, 115, 22, 0.3);
+
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --transition-fast: 150ms ease-in-out;
+            --transition-normal: 250ms ease-in-out;
+            --transition-slow: 350ms ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--gradient-hero);
+            color: var(--neutral-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      transition: var(--transition-normal);
+      height: 80px; /* Fixed height to prevent expansion */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) 0;
+      height: 80px; /* Match header height */
+    }
+
+    .logo {
+      font-family: var(--font-secondary);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--orange);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* User Authentication Styles */
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .username-display {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      border-radius: var(--radius-lg);
+      white-space: nowrap;
+    }
+
+    .username-display:hover {
+      color: var(--orange);
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 0.875rem;
+    }
+
+    .dropdown-menu {
+      position: absolute !important;
+      top: 100% !important;
+      right: 0 !important;
+      left: auto !important;
+      z-index: 1050 !important;
+      min-width: 160px;
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      padding: var(--space-2) 0;
+      margin-top: var(--space-2);
+      transform: translateY(-10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-fast);
+    }
+
+    .dropdown-menu.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-item {
+      display: block;
+      width: 100%;
+      padding: var(--space-2) var(--space-4);
+      color: var(--neutral-700);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      border: none;
+      background: none;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(249, 115, 22, 0.05);
+      color: var(--orange);
+    }
+
+    .dropdown-divider {
+      height: 1px;
+      background: var(--neutral-200);
+      border: none;
+      margin: var(--space-2) 0;
+    }
+
+    .login-button {
+      padding: var(--space-2) var(--space-4);
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 500;
+      border: 2px solid var(--orange);
+      border-radius: var(--radius-lg);
+      transition: var(--transition-fast);
+    }
+
+    .login-button:hover {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition-normal);
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: var(--white);
+      box-shadow: var(--shadow-orange);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--gradient-secondary);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--orange);
+      border: 2px solid var(--orange);
+    }
+
+    .btn-outline:hover {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 120px;
+            padding-bottom: var(--space-20);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: var(--space-16);
+            position: relative;
+            padding: var(--space-16) 0;
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23f97316" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23000000" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: var(--font-secondary);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: var(--space-4);
+            position: relative;
+        }
+
+        .hero-title .highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--neutral-600);
+            max-width: 700px;
+            margin: 0 auto var(--space-8);
+            line-height: 1.7;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-bottom: var(--space-20);
+        }
+
+        .section-title {
+            font-family: var(--font-secondary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-12);
+            color: var(--black);
+        }
+
+        .section-title .highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Enhanced Team Grid - 2x2 Layout */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-8);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: 
+                0 25px 50px -12px rgba(249, 115, 22, 0.15),
+                0 0 0 1px rgba(249, 115, 22, 0.05);
+            border: 1px solid rgba(249, 115, 22, 0.1);
+            transition: var(--transition-normal);
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-normal);
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 35px 60px -12px rgba(249, 115, 22, 0.25),
+                0 0 0 1px rgba(249, 115, 22, 0.1);
+        }
+
+        .team-member:hover::before {
+            transform: scaleX(1);
+        }
+
+        .member-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient-primary);
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 163%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: var(--space-8);
+        }
+
+        .member-name {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: var(--space-2);
+        }
+
+        .member-role {
+            color: var(--orange);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .member-description {
+            color: var(--neutral-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: var(--space-6);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: var(--radius-xl);
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-normal);
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: var(--transition-normal);
+            z-index: -1;
+        }
+
+        .social-link:hover {
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px -5px rgba(249, 115, 22, 0.4);
+        }
+
+        .social-link:hover::before {
+            left: 0;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: var(--space-20) 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-2xl);
+            margin-bottom: var(--space-16);
+        }
+
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23f97316" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .mission-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .mission-title {
+            font-family: var(--font-secondary);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: var(--space-8);
+            color: var(--white);
+        }
+
+        .mission-title .highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mission-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: var(--space-6);
+            color: var(--neutral-300);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: var(--space-20) 0 var(--space-8);
+            margin-top: var(--space-20);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-6);
+            color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-3);
+        }
+
+        .footer-links a {
+            color: var(--neutral-300);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        .footer-social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange);
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+
+        .footer-social-link:hover {
+            background: var(--orange);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-700);
+            padding-top: var(--space-8);
+            text-align: center;
+            color: var(--neutral-400);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+                max-width: 400px;
+            }
+
+            .member-image {
+                height: 200px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .mission-title {
+                font-size: 2rem;
+            }
+
+            .member-info {
+                padding: var(--space-6);
+            }
+
+            .main-content {
+                padding-top: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-4);
+            }
+
+            .hero-title {
+                font-size: 1.6rem;
+            }
+
+            .mission-title {
+                font-size: 1.5rem;
+            }
+
+            .team-grid {
+                max-width: 100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Team member staggered animations */
+        .team-member:nth-child(1) { animation-delay: 0.1s; }
+        .team-member:nth-child(2) { animation-delay: 0.2s; }
+        .team-member:nth-child(3) { animation-delay: 0.3s; }
+        .team-member:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Focus States for Accessibility */
+        .team-member:focus,
+        .social-link:focus {
+            outline: 3px solid rgba(249, 115, 22, 0.5);
+            outline-offset: 2px;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(249, 115, 22, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--orange);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Meet Our <span class="highlight">Team</span></h1>
+                    <p class="hero-subtitle">
+                        We're a passionate group of professionals dedicated to connecting talented individuals with their dream careers through innovative technology and human-centered design.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="team-section">
+                <h2 class="section-title">Our <span class="highlight">Amazing</span> Team</h2>
+                
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="/static/elson.jpg" alt="Elson Machado">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Elson Machado</h3>
+                            <h4 class="member-role">Backend Developer</h4>
+                            <p class="member-description">
+                                Builds secure, scalable, and efficient server-side applications. Expert in Django, useful APIs and database management. Focuses on backend optimization, security, and API integrations. Ensures high availability and smooth data transactions.
+                            </p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/elson-machado-601987322" class="social-link" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:elsonmachadoem@gmail.com" class="social-link">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="/static/jills.jpg" alt="Elson Machado">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Jills Rodrigues</h3>
+                            <h4 class="member-role">UI/UX Designer</h4>
+                            <p class="member-description">
+                                Crafts intuitive and tech-optimized user experiences. Skilled in Figma, Adobe XD, and responsive design systems. Focuses on UX research, wireframing, and user flow optimization. Passionate about blending aesthetics with functionality.
+                            </p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/jills-rodrigues-39aa72353" class="social-link" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:jillsrodrigues0@gmail.com" class="social-link">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="/static/siya.jpg" alt="siya">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Siya Almeida</h3>
+                            <h4 class="member-role">Frontend Developer</h4>
+                            <p class="member-description">
+                                Specializes in building responsive, high-performance web interfaces. Expert in HTML, CSS, JavaScript. Focuses on user-centric, mobile-first design principles. Ensures seamless UI integration with backend systems.
+                            </p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/siya-almeida-738862297" class="social-link" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:siyalmeida23@gmail.com" class="social-link">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="/static/smith.jpg" alt="smith">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Smith Dcunha</h3>
+                            <h4 class="member-role">Frontend Developer</h4>
+                            <p class="member-description">
+                                Experienced in developing dynamic, cross-platform web apps. Proficient with HTML, CSS, and modern JavaScript frameworks. Focuses on performance optimization and clean code architecture. Creates intuitive, fast-loading web experiences.
+                            </p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/smithdcunha2005" class="social-link" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:dcunhasmith2005@gmail.com" class="social-link">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mission Section -->
+            <section class="mission-section">
+                <div class="mission-content">
+                    <h2 class="mission-title">Our <span class="highlight">Mission</span></h2>
+                    <p class="mission-text">
+                        At Jobify, we are driven by a simple vision: to make finding the right job easier, faster, and more meaningful. Our mission is to connect talented individuals with innovative companies by leveraging the power of technology, transparency, and human-centered design.
+                    </p>
+                    <p class="mission-text">
+                        We aim to build a platform where opportunity is accessible to everyone, and where diversity, equity, and inclusion are at the heart of every connection made. At Jobify, we're not just about filling positions — we're about building futures.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Enhanced JavaScript functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeAnimations();
+            setupEventListeners();
+            startTeamAnimations();
+        });
+
+        // Initialize scroll animations
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Header background on scroll
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            });
+        }
+
+        // Setup all event listeners
+        function setupEventListeners() {
+            // Team card interactions
+            document.querySelectorAll('.team-member').forEach(card => {
+                card.addEventListener('click', function() {
+                    const name = this.querySelector('.member-name').textContent;
+                    showNotification(`Viewing ${name}'s profile`, 'info');
+                });
+
+                // Add keyboard navigation
+                card.setAttribute('tabindex', '0');
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+
+            // Social link tracking
+            document.querySelectorAll('.social-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const platform = this.querySelector('i').classList.contains('fa-linkedin-in') ? 'LinkedIn' : 'Email';
+                    const memberName = this.closest('.team-member').querySelector('.member-name').textContent;
+                    showNotification(`Opening ${platform} for ${memberName}`, 'success');
+                });
+            });
+
+            // Add hover effects to team members
+            document.querySelectorAll('.team-member').forEach(member => {
+                member.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-12px) scale(1.02)';
+                });
+                
+                member.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        }
+
+        // Start team member animations
+        function startTeamAnimations() {
+            const teamMembers = document.querySelectorAll('.team-member');
+            
+            teamMembers.forEach((member, index) => {
+                member.style.opacity = '0';
+                member.style.transform = 'translateY(40px)';
+                
+                setTimeout(() => {
+                    member.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                    member.style.opacity = '1';
+                    member.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' : 
+                           type === 'error' ? 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)' : 
+                           'linear-gradient(135deg, #f97316 0%, #ea580c 100%)'};
+                color: white;
+                padding: 16px 20px;
+                border-radius: 12px;
+                font-weight: 600;
+                z-index: 10000;
+                transform: translateX(100%);
+                transition: all 0.3s ease-out;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+                max-width: 300px;
+                font-size: 0.9rem;
+            `;
+            
+            const icon = type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️';
+            notification.innerHTML = `${icon} ${message}`;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close any open modals or notifications
+                document.querySelectorAll('.notification').forEach(n => n.remove());
+            }
+            
+            // Navigate team members with arrow keys
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                const teamMembers = Array.from(document.querySelectorAll('.team-member'));
+                const focused = document.activeElement;
+                const currentIndex = teamMembers.indexOf(focused);
+                
+                if (currentIndex !== -1) {
+                    e.preventDefault();
+                    const nextIndex = e.key === 'ArrowRight' ? 
+                        (currentIndex + 1) % teamMembers.length : 
+                        (currentIndex - 1 + teamMembers.length) % teamMembers.length;
+                    teamMembers[nextIndex].focus();
+                }
+            }
+        });
+
+        // Performance optimization: Lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.member-image img').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Add reading progress indicator
+        function updateReadingProgress() {
+            const article = document.querySelector('.main-content');
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollTop = window.pageYOffset;
+            const progress = (scrollTop / (articleHeight - windowHeight)) * 100;
+            
+            // Update progress indicator if it exists
+            const progressIndicator = document.querySelector('.reading-progress');
+            if (progressIndicator) {
+                progressIndicator.style.width = Math.min(100, Math.max(0, progress)) + '%';
+            }
+        }
+
+        window.addEventListener('scroll', updateReadingProgress);
+
+        // Welcome message
+        setTimeout(() => {
+            showNotification('Welcome to our team page! 👋', 'info');
+        }, 1000);
+
+        console.log('Enhanced About Us page initialized successfully! 🚀');
+    </script>
+</body>
+</html>

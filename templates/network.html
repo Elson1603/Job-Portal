@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary meta tags -->
+  <title>Jobify - Network Engineer Jobs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="title" content="Jobify - Network Engineer Jobs">
+  <meta name="description" content="Find the best network engineer jobs with our modern job portal">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Black and Orange Color System */
+      --primary-50: #fff7ed;
+      --primary-100: #ffedd5;
+      --primary-200: #fed7aa;
+      --primary-300: #fdba74;
+      --primary-400: #fb923c;
+      --primary-500: #f97316;
+      --primary-600: #ea580c;
+      --primary-700: #c2410c;
+      --primary-800: #9a3412;
+      --primary-900: #7c2d12;
+
+      --secondary-50: #f8fafc;
+      --secondary-100: #f1f5f9;
+      --secondary-200: #e2e8f0;
+      --secondary-300: #cbd5e1;
+      --secondary-400: #94a3b8;
+      --secondary-500: #64748b;
+      --secondary-600: #475569;
+      --secondary-700: #334155;
+      --secondary-800: #1e293b;
+      --secondary-900: #0f172a;
+
+      --neutral-50: #fafafa;
+      --neutral-100: #f5f5f5;
+      --neutral-200: #e5e5e5;
+      --neutral-300: #d4d4d4;
+      --neutral-400: #a3a3a3;
+      --neutral-500: #737373;
+      --neutral-600: #525252;
+      --neutral-700: #404040;
+      --neutral-800: #262626;
+      --neutral-900: #171717;
+
+      --black: #000000;
+      --white: #ffffff;
+      --orange: #f97316;
+      --orange-light: #fb923c;
+      --orange-dark: #ea580c;
+
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+      --gradient-secondary: linear-gradient(135deg, var(--black) 0%, var(--neutral-800) 100%);
+      --gradient-accent: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 50%, var(--orange-dark) 100%);
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-orange: 0 10px 25px -5px rgba(249, 115, 22, 0.3);
+
+      /* Typography */
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      /* Spacing */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      /* Border Radius */
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --radius-full: 9999px;
+
+      /* Transitions */
+      --transition-fast: 150ms ease-in-out;
+      --transition-normal: 250ms ease-in-out;
+      --transition-slow: 350ms ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: linear-gradient(135deg, var(--neutral-50) 0%, var(--neutral-100) 100%);
+      color: var(--neutral-800);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header Styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      transition: var(--transition-normal);
+      height: 80px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) 0;
+      height: 80px;
+    }
+
+    .logo {
+      font-family: var(--font-secondary);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--orange);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* User Dropdown */
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .username-display {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-lg);
+      transition: var(--transition-fast);
+    }
+
+    .username-display:hover {
+      color: var(--orange);
+      background: rgba(249, 115, 22, 0.1);
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 0.875rem;
+    }
+
+    .dropdown-menu {
+      position: absolute !important;
+      top: 100% !important;
+      right: 0 !important;
+      z-index: 1050 !important;
+      min-width: 160px;
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .dropdown-menu.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-item {
+      display: block;
+      padding: var(--space-3) var(--space-4);
+      color: var(--neutral-700);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .dropdown-item:hover {
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--orange);
+    }
+
+    .dropdown-divider {
+      height: 1px;
+      background: var(--neutral-200);
+      border: none;
+      margin: var(--space-2) 0;
+    }
+
+    .login-button {
+      background: var(--gradient-primary);
+      color: var(--white);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-normal);
+      box-shadow: var(--shadow-orange);
+    }
+
+    .login-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
+      color: var(--white);
+    }
+
+    /* Main Content */
+    .main-content {
+      padding-top: 120px;
+      padding-bottom: var(--space-20);
+    }
+
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      margin-bottom: var(--space-16);
+      position: relative;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .page-title {
+      font-family: var(--font-secondary);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: var(--space-4);
+      position: relative;
+    }
+
+    .page-title .highlight {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    .page-title .highlight::after {
+      content: '🌐';
+      position: absolute;
+      right: -40px;
+      top: -10px;
+      font-size: 2rem;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--neutral-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Search Filter */
+    .search-filter {
+      background: var(--white);
+      padding: var(--space-8);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: var(--space-12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .search-filter::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+    }
+
+    .search-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-6);
+      align-items: end;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: var(--neutral-700);
+      margin-bottom: var(--space-2);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: var(--space-3) var(--space-4);
+      border: 2px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      font-size: 1rem;
+      transition: var(--transition-fast);
+      background: var(--white);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    }
+
+    .search-btn {
+      background: var(--gradient-primary);
+      color: var(--white);
+      border: none;
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-lg);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-normal);
+      box-shadow: var(--shadow-orange);
+      height: fit-content;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .search-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .search-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
+    }
+
+    .search-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Results Header */
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-8);
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    .jobs-count {
+      font-size: 1.1rem;
+      color: var(--neutral-700);
+      font-weight: 500;
+    }
+
+    .jobs-count strong {
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .sort-filter {
+      display: flex;
+      gap: var(--space-3);
+      align-items: center;
+    }
+
+    .sort-btn {
+      background: var(--white);
+      border: 2px solid var(--neutral-200);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-lg);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      color: var(--neutral-700);
+    }
+
+    .sort-btn:hover,
+    .sort-btn.active {
+      border-color: var(--orange);
+      color: var(--orange);
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    /* Jobs List */
+    .jobs-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: var(--space-8);
+      margin-bottom: var(--space-16);
+    }
+
+    .job-card {
+      background: var(--white);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-normal);
+      border: 1px solid var(--neutral-200);
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .job-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transition: var(--transition-normal);
+    }
+
+    .job-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .job-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .job-header {
+      padding: var(--space-8) var(--space-8) var(--space-6);
+      border-bottom: 1px solid var(--neutral-200);
+      position: relative;
+    }
+
+    .company-info {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+
+    .company-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Network-specific company logos */
+    .company-logo.cisco { background: var(--gradient-primary); }
+    .company-logo.juniper { background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%); }
+    .company-logo.arista { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+    .company-logo.vmware { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+    .company-logo.fortinet { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+    .company-logo.palo { background: var(--gradient-secondary); }
+    .company-logo.hpe { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+    .company-logo.extreme { background: linear-gradient(135deg, #34d399 0%, #10b981 100%); }
+    .company-logo.huawei { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); }
+
+    .company-details h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--neutral-600);
+      margin-bottom: var(--space-1);
+    }
+
+    .company-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--neutral-800);
+    }
+
+    .job-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: var(--space-3);
+      line-height: 1.3;
+    }
+
+    .job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      color: var(--neutral-600);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .job-body {
+      padding: var(--space-6) var(--space-8);
+    }
+
+    .job-description {
+      color: var(--neutral-700);
+      line-height: 1.6;
+      margin-bottom: var(--space-4);
+    }
+
+    .job-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .skill-tag {
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--orange);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(249, 115, 22, 0.2);
+      transition: var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .skill-tag:hover {
+      background: rgba(249, 115, 22, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .skill-tag:hover::before {
+      left: 100%;
+    }
+
+    .job-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-6) var(--space-8);
+      background: var(--gradient-secondary);
+      color: var(--white);
+    }
+
+    .salary-range {
+      font-weight: 700;
+      color: var(--orange);
+      font-size: 1.1rem;
+    }
+
+    .job-actions {
+      display: flex;
+      gap: var(--space-3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--neutral-600);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-lg);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .btn-secondary:hover {
+      color: var(--orange);
+      border-color: var(--orange);
+      background: rgba(249, 115, 22, 0.1);
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: var(--white);
+      border: none;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-normal);
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.4);
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    /* Pagination */
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-12);
+    }
+
+    .pagination {
+      display: flex;
+      gap: var(--space-2);
+      align-items: center;
+      list-style: none;
+    }
+
+    .pagination-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      border: 1px solid var(--neutral-200);
+      background: var(--white);
+      color: var(--neutral-700);
+      text-decoration: none;
+      border-radius: var(--radius-lg);
+      font-weight: 500;
+      transition: var(--transition-fast);
+      padding: 0 var(--space-3);
+    }
+
+    .pagination-btn:hover,
+    .pagination-btn.active {
+      border-color: var(--orange);
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .search-form {
+        grid-template-columns: 1fr;
+      }
+
+      .jobs-list {
+        grid-template-columns: 1fr;
+      }
+
+      .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .job-footer {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+      }
+
+      .job-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .page-title .highlight::after {
+        right: -30px;
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .job-card:nth-child(1) { animation-delay: 0.1s; }
+    .job-card:nth-child(2) { animation-delay: 0.2s; }
+    .job-card:nth-child(3) { animation-delay: 0.3s; }
+    .job-card:nth-child(4) { animation-delay: 0.4s; }
+    .job-card:nth-child(5) { animation-delay: 0.5s; }
+    .job-card:nth-child(6) { animation-delay: 0.6s; }
+    .job-card:nth-child(7) { animation-delay: 0.7s; }
+    .job-card:nth-child(8) { animation-delay: 0.8s; }
+    .job-card:nth-child(9) { animation-delay: 0.9s; }
+
+    /* Notification Styles */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: var(--space-4) var(--space-5);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      z-index: 1000;
+      animation: slideIn 0.3s ease;
+      max-width: 300px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .notification-success {
+      background: #10b981;
+      color: white;
+    }
+
+    .notification-info {
+      background: var(--orange);
+      color: white;
+    }
+
+    .notification-error {
+      background: #ef4444;
+      color: white;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Focus States for Accessibility */
+    .btn-primary:focus,
+    .btn-secondary:focus,
+    .job-card:focus,
+    input:focus,
+    select:focus {
+      outline: 2px solid var(--orange);
+      outline-offset: 2px;
+    }
+
+    /* Special Network Elements */
+    .network-badge {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      background: var(--gradient-primary);
+      color: var(--white);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .cert-info {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      margin-top: var(--space-2);
+      transition: var(--transition-fast);
+    }
+
+    .cert-info:hover {
+      color: var(--orange-dark);
+      transform: translateX(2px);
+    }
+
+    .security-indicator {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: var(--white);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-left: var(--space-2);
+    }
+
+        .footer {
+      background: var(--gradient-secondary);
+      color: var(--white);
+      padding: var(--space-20) 0 var(--space-8);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-12);
+      margin-bottom: var(--space-12);
+    }
+
+    .footer-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--space-6);
+      color: var(--white);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: var(--space-3);
+    }
+
+    .footer-links a {
+      color: var(--neutral-300);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(249, 115, 22, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      text-decoration: none;
+      transition: var(--transition-normal);
+    }
+
+    .social-link:hover {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--neutral-700);
+      padding-top: var(--space-8);
+      text-align: center;
+      color: var(--neutral-400);
+    }
+  </style>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="static/favicon.png" type="image/svg+xml">
+</head>
+
+<body>
+  <!-- Header -->
+ {% include "header.html" %}
+
+  <main>
+    <div class="container main-content">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title"><span class="highlight">Network Engineer</span> Jobs</h1>
+        <p class="page-subtitle">Discover networking and infrastructure opportunities from innovative companies worldwide</p>
+      </div>
+
+      <!-- Search Filter -->
+      <div class="search-filter">
+        <form class="search-form">
+          <div class="form-group">
+            <label for="keyword">
+              <i class="fas fa-search"></i>
+              Keywords
+            </label>
+            <input type="text" id="keyword" placeholder="Job title, skills or company" value="Network Engineer">
+          </div>
+          <div class="form-group">
+            <label for="location">
+              <i class="fas fa-map-marker-alt"></i>
+              Location
+            </label>
+            <input type="text" id="location" placeholder="City, state or remote">
+          </div>
+          <div class="form-group">
+            <label for="experience">
+              <i class="fas fa-chart-line"></i>
+              Experience
+            </label>
+            <select id="experience">
+              <option value="">Any experience</option>
+              <option value="junior">Junior Level (0-2 years)</option>
+              <option value="mid" selected>Mid Level (2-5 years)</option>
+              <option value="senior">Senior Level (5+ years)</option>
+              <option value="lead">Lead Level (7+ years)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="job-type">
+              <i class="fas fa-briefcase"></i>
+              Job Type
+            </label>
+            <select id="job-type">
+              <option value="">All types</option>
+              <option value="full-time">Full-time</option>
+              <option value="part-time">Part-time</option>
+              <option value="contract">Contract</option>
+              <option value="remote">Remote</option>
+            </select>
+          </div>
+          <button type="submit" class="search-btn">
+            <i class="fas fa-search" style="margin-right: 8px;"></i>
+            Search Jobs
+          </button>
+        </form>
+      </div>
+
+      <!-- Results Section -->
+      <div class="results-header">
+        <div class="jobs-count">
+          <strong>38</strong> Network Engineer jobs found
+        </div>
+        <div class="sort-filter">
+          <button class="sort-btn active">Relevance</button>
+          <button class="sort-btn">Date</button>
+          <button class="sort-btn">Salary</button>
+          <button class="sort-btn">Certifications</button>
+        </div>
+      </div>
+
+      <div class="jobs-list">
+        <!-- Job Card 1 -->
+        <article class="job-card">
+          <div class="network-badge">Featured</div>
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo cisco">CS</div>
+              <div class="company-details">
+                <h4>Networking Giant</h4>
+                <div class="company-name">Cisco Systems</div>
+              </div>
+            </div>
+            <h3 class="job-title">Senior Network Engineer <span class="security-indicator">Security</span></h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>San Jose, CA</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Today</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Design and implement large-scale enterprise network solutions. Lead network architecture projects, troubleshoot complex issues, and ensure optimal performance of mission-critical infrastructure.
+            </p>
+            <a href="#" class="cert-info">
+              <i class="fas fa-certificate"></i>
+              CCNP/CCIE Preferred
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Cisco</span>
+              <span class="skill-tag">BGP</span>
+              <span class="skill-tag">OSPF</span>
+              <span class="skill-tag">MPLS</span>
+              <span class="skill-tag">SD-WAN</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$120,000 - $160,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 2 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo juniper">JU</div>
+              <div class="company-details">
+                <h4>Network Security</h4>
+                <div class="company-name">Juniper Networks</div>
+              </div>
+            </div>
+            <h3 class="job-title">Network Security Engineer</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Sunnyvale, CA (Hybrid)</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>1 day ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Secure network infrastructure and implement advanced security protocols. Design firewall policies, monitor for threats, and maintain network security compliance across global operations.
+            </p>
+            <a href="#" class="cert-info">
+              <i class="fas fa-shield-alt"></i>
+              Security+ Required
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Firewall</span>
+              <span class="skill-tag">VPN</span>
+              <span class="skill-tag">IDS/IPS</span>
+              <span class="skill-tag">SIEM</span>
+              <span class="skill-tag">Security+</span>
+            </div>
+          </div>
+          <div class="job-footer" style="margin-top: 26px;">
+            <div class="salary-range">$110,000 - $145,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 3 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo arista">AR</div>
+              <div class="company-details">
+                <h4>Cloud Networking</h4>
+                <div class="company-name">Arista Networks</div>
+              </div>
+            </div>
+            <h3 class="job-title">Cloud Network Architect</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Santa Clara, CA</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>2 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Architect cloud-native networking solutions for modern data centers. Design scalable network topologies, implement automation, and optimize performance for cloud workloads.
+            </p>
+            <a href="#" class="cert-info">
+              <i class="fas fa-cloud"></i>
+              AWS/Azure Networking
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Azure</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">Python</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$140,000 - $180,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 4 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo vmware">VM</div>
+              <div class="company-details">
+                <h4>Virtualization</h4>
+                <div class="company-name">VMware</div>
+              </div>
+            </div>
+            <h3 class="job-title">Network Operations Engineer</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Palo Alto, CA</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>3 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Monitor and maintain 24/7 network operations. Respond to incidents, perform root cause analysis, and implement proactive monitoring solutions for enterprise networks.
+            </p>
+            <a href="#" class="cert-info">
+              <i class="fas fa-tools"></i>
+              ITIL Foundation
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Network Monitoring</span>
+              <span class="skill-tag">SNMP</span>
+              <span class="skill-tag">SolarWinds</span>
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">ITIL</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$85,000 - $115,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 5 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo fortinet">FO</div>
+              <div class="company-details">
+                <h4>Security Solutions</h4>
+                <div class="company-name">Fortinet</div>
+              </div>
+            </div>
+            <h3 class="job-title">Network Automation Engineer</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Remote (Global)</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>4 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Develop network automation solutions using modern DevOps practices. Create infrastructure as code, implement CI/CD pipelines for network deployments, and reduce manual operations.
+            </p>
+            <a href="#" class="cert-info">
+              <i class="fas fa-robot"></i>
+              Automation Experience
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Ansible</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">NETCONF</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$100,000 - $135,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 6 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo palo">PA</div>
+              <div class="company-details">
+                <h4>Cybersecurity</h4>
+                <div class="company-name">Palo Alto Networks</div>
+              </div>
+            </div>
+            <h3 class="job-title">Data Center Network Engineer</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Santa Clara, CA</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>5 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Design and manage high-performance data center networks. Implement spine-leaf architectures, optimize traffic flows, and ensure reliable connectivity for critical applications.
+            </p>
+            <a href="#" class="cert-info">
+              <i class="fas fa-server"></i>
+              Data Center Experience
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Data Center</span>
+              <span class="skill-tag">Spine-Leaf</span>
+              <span class="skill-tag">VXLAN</span>
+              <span class="skill-tag">EVPN</span>
+              <span class="skill-tag">Load Balancing</span>
+            </div>
+          </div>
+          <div class="job-footer" style="margin-top: 26px;">
+            <div class="salary-range">$125,000 - $165,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 7 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo hpe">HP</div>
+              <div class="company-details">
+                <h4>Enterprise Solutions</h4>
+                <div class="company-name">HPE Aruba</div>
+              </div>
+            </div>
+            <h3 class="job-title">Wireless Network Engineer</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Roseville, CA (Hybrid)</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>1 week ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Design and deploy enterprise wireless networks. Plan RF coverage, implement security protocols, and optimize wireless performance for diverse client environments.
+            </p>
+            <a href="#" class="cert-info">
+              <i class="fas fa-wifi"></i>
+              Wireless Certifications
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Wi-Fi 6</span>
+              <span class="skill-tag">802.11</span>
+              <span class="skill-tag">RF Planning</span>
+              <span class="skill-tag">WPA3</span>
+              <span class="skill-tag">WLAN Controllers</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$95,000 - $125,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 8 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo extreme">EX</div>
+              <div class="company-details">
+                <h4>Network Solutions</h4>
+                <div class="company-name">Extreme Networks</div>
+              </div>
+            </div>
+            <h3 class="job-title">Network Infrastructure Specialist</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>San Jose, CA</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Contract</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>6 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Support network infrastructure upgrades and migrations. Configure switches and routers, implement QoS policies, and ensure seamless network transitions with minimal downtime.
+            </p>
+            <a href="#" class="cert-info">
+              <i class="fas fa-network-wired"></i>
+              Layer 2/3 Expertise
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Layer 2/3</span>
+              <span class="skill-tag">VLAN</span>
+              <span class="skill-tag">STP</span>
+              <span class="skill-tag">QoS</span>
+              <span class="skill-tag">Network Troubleshooting</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$75,000 - $105,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 9 -->
+       
+      </div>
+
+      <!-- Pagination -->
+      
+    </div>
+  </main>
+
+  {% include "footer.html" %}
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Enhanced JavaScript interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all job cards
+      document.querySelectorAll('.job-card').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Header background on scroll
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+          header.style.background = 'rgba(255, 255, 255, 0.98)';
+        } else {
+          header.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
+      });
+
+      // Search functionality
+      const searchForm = document.querySelector('.search-form');
+      const searchBtn = document.querySelector('.search-btn');
+      
+      searchForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Searching...';
+        
+        // Simulate search delay
+        setTimeout(() => {
+          searchBtn.innerHTML = '<i class="fas fa-search" style="margin-right: 8px;"></i>Search Jobs';
+          showNotification('Search completed! 38 Network Engineer jobs found.', 'success');
+        }, 1500);
+      });
+
+      // Apply button functionality
+      const applyButtons = document.querySelectorAll('.btn-primary');
+      applyButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+          showNotification(`Application started for: ${jobTitle}`, 'info');
+        });
+      });
+
+      // Save job functionality
+      const saveButtons = document.querySelectorAll('.btn-secondary');
+      saveButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+          const icon = this.querySelector('i');
+          
+          if (this.classList.contains('saved')) {
+            this.classList.remove('saved');
+            icon.className = 'far fa-heart';
+            showNotification(`${jobTitle} removed from saved jobs`, 'info');
+          } else {
+            this.classList.add('saved');
+            icon.className = 'fas fa-heart';
+            showNotification(`${jobTitle} saved to your list`, 'success');
+          }
+        });
+      });
+
+      // Sort functionality
+      const sortButtons = document.querySelectorAll('.sort-btn');
+      sortButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          sortButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          showNotification(`Sorted by ${this.textContent}`, 'info');
+        });
+      });
+
+      // Certification info interactions
+      const certLinks = document.querySelectorAll('.cert-info');
+      certLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+          showNotification(`Certification requirements for ${jobTitle} opened`, 'info');
+        });
+      });
+
+      // Notification system
+      function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.style.opacity = '0';
+          notification.style.transform = 'translateX(100%)';
+          setTimeout(() => notification.remove(), 300);
+        }, 3000);
+      }
+
+      // Add smooth scrolling to pagination
+      const paginationLinks = document.querySelectorAll('.pagination-btn');
+      paginationLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector('.page-header').scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Skill tag hover effects
+      const skillTags = document.querySelectorAll('.skill-tag');
+      skillTags.forEach(tag => {
+        tag.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        
+        tag.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Network badge animation
+      const networkBadges = document.querySelectorAll('.network-badge');
+      networkBadges.forEach(badge => {
+        setInterval(() => {
+          badge.style.transform = 'scale(1.1)';
+          setTimeout(() => {
+            badge.style.transform = 'scale(1)';
+          }, 200);
+        }, 3000);
+      });
+
+      // Security indicator animations
+      const securityIndicators = document.querySelectorAll('.security-indicator');
+      securityIndicators.forEach(indicator => {
+        setInterval(() => {
+          indicator.style.transform = 'scale(1.1)';
+          setTimeout(() => {
+            indicator.style.transform = 'scale(1)';
+          }, 200);
+        }, 4000);
+      });
+    });
+  </script>
+</body>
+</html>

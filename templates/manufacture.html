@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing Companies Actively Hiring - Jobify</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="static/favicon.png" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Black and Orange Color System */
+            --primary-50: #fff7ed;
+            --primary-100: #ffedd5;
+            --primary-200: #fed7aa;
+            --primary-300: #fdba74;
+            --primary-400: #fb923c;
+            --primary-500: #f97316;
+            --primary-600: #ea580c;
+            --primary-700: #c2410c;
+            --primary-800: #9a3412;
+            --primary-900: #7c2d12;
+
+            --secondary-50: #f8fafc;
+            --secondary-100: #f1f5f9;
+            --secondary-200: #e2e8f0;
+            --secondary-300: #cbd5e1;
+            --secondary-400: #94a3b8;
+            --secondary-500: #64748b;
+            --secondary-600: #475569;
+            --secondary-700: #334155;
+            --secondary-800: #1e293b;
+            --secondary-900: #0f172a;
+
+            --neutral-50: #fafafa;
+            --neutral-100: #f5f5f5;
+            --neutral-200: #e5e5e5;
+            --neutral-300: #d4d4d4;
+            --neutral-400: #a3a3a3;
+            --neutral-500: #737373;
+            --neutral-600: #525252;
+            --neutral-700: #404040;
+            --neutral-800: #262626;
+            --neutral-900: #171717;
+
+            --black: #000000;
+            --white: #ffffff;
+            --orange: #f97316;
+            --orange-light: #fb923c;
+            --orange-dark: #ea580c;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--black) 0%, var(--neutral-800) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 50%, var(--orange-dark) 100%);
+            --gradient-hero: linear-gradient(135deg, var(--neutral-50) 0%, var(--neutral-100) 100%);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-orange: 0 10px 25px -5px rgba(249, 115, 22, 0.3);
+
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --transition-fast: 150ms ease-in-out;
+            --transition-normal: 250ms ease-in-out;
+            --transition-slow: 350ms ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--gradient-hero);
+            color: var(--neutral-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      transition: var(--transition-normal);
+      height: 80px; /* Fixed height to prevent expansion */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) 0;
+      height: 80px; /* Match header height */
+    }
+
+    .logo {
+      font-family: var(--font-secondary);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--orange);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* User Authentication Styles */
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .username-display {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      border-radius: var(--radius-lg);
+      white-space: nowrap;
+    }
+
+    .username-display:hover {
+      color: var(--orange);
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 0.875rem;
+    }
+
+    .dropdown-menu {
+      position: absolute !important;
+      top: 100% !important;
+      right: 0 !important;
+      left: auto !important;
+      z-index: 1050 !important;
+      min-width: 160px;
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      padding: var(--space-2) 0;
+      margin-top: var(--space-2);
+      transform: translateY(-10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-fast);
+    }
+
+    .dropdown-menu.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-item {
+      display: block;
+      width: 100%;
+      padding: var(--space-2) var(--space-4);
+      color: var(--neutral-700);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      border: none;
+      background: none;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(249, 115, 22, 0.05);
+      color: var(--orange);
+    }
+
+    .dropdown-divider {
+      height: 1px;
+      background: var(--neutral-200);
+      border: none;
+      margin: var(--space-2) 0;
+    }
+
+    .login-button {
+      padding: var(--space-2) var(--space-4);
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 500;
+      border: 2px solid var(--orange);
+      border-radius: var(--radius-lg);
+      transition: var(--transition-fast);
+    }
+
+    .login-button:hover {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition-normal);
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: var(--white);
+      box-shadow: var(--shadow-orange);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--gradient-secondary);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--orange);
+      border: 2px solid var(--orange);
+    }
+
+    .btn-outline:hover {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+        /* Main Content */
+        .main-content {
+            padding-top: 120px;
+            padding-bottom: var(--space-20);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: var(--space-16);
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .hero-title {
+            font-family: var(--font-secondary);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: var(--space-4);
+            position: relative;
+        }
+
+        .hero-title .highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-title .highlight::after {
+            content: '🏭';
+            position: absolute;
+            right: -50px;
+            top: -10px;
+            font-size: 3rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--neutral-600);
+            max-width: 700px;
+            margin: 0 auto var(--space-8);
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-8);
+            margin-bottom: var(--space-12);
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--space-4);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            min-width: 120px;
+            transition: var(--transition-normal);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--orange);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--neutral-600);
+            font-weight: 500;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            margin-bottom: var(--space-12);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .search-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .search-form {
+            display: flex;
+            gap: var(--space-4);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 300px;
+            padding: var(--space-4) var(--space-6);
+            border: 2px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+            background: var(--neutral-50);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--orange);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        .search-button {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            padding: var(--space-4) var(--space-8);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-orange);
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-16);
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-normal);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--orange);
+        }
+
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-card.active {
+            border-color: var(--orange);
+            background: var(--primary-50);
+        }
+
+        .category-card.active::before {
+            transform: scaleX(1);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-4);
+            display: block;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: var(--space-2);
+            font-family: var(--font-secondary);
+        }
+
+        .category-count {
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .category-description {
+            color: var(--neutral-600);
+            font-size: 0.9rem;
+            margin-top: var(--space-2);
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            gap: var(--space-8);
+            align-items: flex-start;
+        }
+
+        /* Filters Sidebar */
+        .filters-sidebar {
+            width: 350px;
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-lg);
+            position: sticky;
+            top: 100px;
+            flex-shrink: 0;
+        }
+
+        .filter-section {
+            margin-bottom: var(--space-8);
+        }
+
+        .filter-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: var(--space-6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .clear-filters {
+            color: var(--orange);
+            font-size: 0.875rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .clear-filters:hover {
+            color: var(--orange-dark);
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-4);
+            padding: var(--space-2);
+            border-radius: var(--radius-md);
+            transition: var(--transition-fast);
+        }
+
+        .filter-option:hover {
+            background: var(--neutral-50);
+        }
+
+        .filter-option input[type="checkbox"] {
+            margin-right: var(--space-3);
+            accent-color: var(--orange);
+            width: 18px;
+            height: 18px;
+        }
+
+        .filter-option label {
+            color: var(--neutral-700);
+            cursor: pointer;
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .filter-count {
+            color: var(--neutral-500);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .location-search {
+            width: 100%;
+            padding: var(--space-3) var(--space-4);
+            border: 2px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-4);
+            transition: var(--transition-fast);
+        }
+
+        .location-search:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        /* Companies Section */
+        .companies-section {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-8);
+            padding: var(--space-6);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .results-count {
+            font-size: 1.1rem;
+            color: var(--neutral-700);
+            font-weight: 600;
+        }
+
+        .sort-dropdown {
+            padding: var(--space-2) var(--space-4);
+            border: 2px solid var(--neutral-200);
+            border-radius: var(--radius-md);
+            background: var(--white);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .sort-dropdown:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        /* Company Grid */
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .company-card {
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .company-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-normal);
+        }
+
+        .company-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--orange);
+        }
+
+        .company-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .company-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            font-weight: bold;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .company-logo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .company-card:hover .company-logo::after {
+            left: 100%;
+        }
+
+        .company-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: var(--space-2);
+            font-family: var(--font-secondary);
+        }
+
+        .company-rating {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-2);
+        }
+
+        .rating-stars {
+            color: #fbbf24;
+            font-size: 1.1rem;
+        }
+
+        .rating-score {
+            font-weight: 600;
+            color: var(--neutral-800);
+        }
+
+        .rating-count {
+            color: var(--neutral-500);
+            font-size: 0.875rem;
+        }
+
+        .company-meta {
+            display: flex;
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+            font-size: 0.875rem;
+            color: var(--neutral-600);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+
+        .company-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-bottom: var(--space-6);
+        }
+
+        .company-tag {
+            background: var(--neutral-100);
+            color: var(--neutral-700);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--neutral-200);
+            transition: var(--transition-fast);
+        }
+
+        .company-tag.highlight {
+            background: var(--primary-100);
+            color: var(--orange);
+            border-color: var(--primary-200);
+        }
+
+        .company-tag:hover {
+            transform: translateY(-1px);
+        }
+
+        .company-actions {
+            display: flex;
+            gap: var(--space-3);
+            align-items: center;
+        }
+
+        .view-jobs-btn {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-jobs-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .view-jobs-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-orange);
+        }
+
+        .view-jobs-btn:hover::before {
+            left: 100%;
+        }
+
+        .job-count {
+            background: var(--primary-100);
+            color: var(--orange);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-lg);
+            font-size: 0.875rem;
+            font-weight: 700;
+            border: 2px solid var(--primary-200);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-secondary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-12);
+            margin-top: var(--space-16);
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-6);
+            color: var(--orange);
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            font-family: var(--font-secondary);
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: var(--space-8);
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            padding: var(--space-4) var(--space-10);
+            border-radius: var(--radius-lg);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.4);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Footer */
+        .footer {
+      background: var(--gradient-secondary);
+      color: var(--white);
+      padding: var(--space-20) 0 var(--space-8);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-12);
+      margin-bottom: var(--space-12);
+    }
+
+    .footer-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--space-6);
+      color: var(--white);
+    }
+
+    .footer-links {
+      list-style: none;
+      margin-left:4px !important;
+    }
+
+    .footer-links li {
+      margin-bottom: var(--space-3);
+    }
+
+    .footer-links a {
+      color: var(--neutral-300);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(249, 115, 22, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      text-decoration: none;
+      transition: var(--transition-normal);
+    }
+
+    .social-link:hover {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--neutral-700);
+      padding-top: var(--space-8);
+      text-align: center;
+      color: var(--neutral-400);
+    }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content-area {
+                flex-direction: column;
+            }
+
+            .filters-sidebar {
+                width: 100%;
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-form {
+                flex-direction: column;
+            }
+
+            .search-input {
+                min-width: 100%;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .company-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title .highlight::after {
+                right: -30px;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .company-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .company-actions {
+                flex-direction: column;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+        .category-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .company-card:nth-child(1) { animation-delay: 0.1s; }
+        .company-card:nth-child(2) { animation-delay: 0.2s; }
+        .company-card:nth-child(3) { animation-delay: 0.3s; }
+        .company-card:nth-child(4) { animation-delay: 0.4s; }
+        .company-card:nth-child(5) { animation-delay: 0.5s; }
+        .company-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: var(--space-4) var(--space-5);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+            max-width: 300px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .notification-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .notification-info {
+            background: var(--orange);
+            color: white;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+   {% include 'header.html' %}
+
+    <main>
+        <div class="container main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h1 class="hero-title">Discover Top <span class="highlight">Manufacturing</span> Companies</h1>
+                <p class="hero-subtitle">
+                    Explore opportunities with leading manufacturing companies across automotive, electronics, textiles, chemicals, and industrial sectors. Find your perfect role in India's manufacturing revolution.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">900+</span>
+                        <span class="stat-label">Manufacturing Companies</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15K+</span>
+                        <span class="stat-label">Active Jobs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">85%</span>
+                        <span class="stat-label">Hiring Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Cities</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <form class="search-form" onsubmit="performSearch(); return false;">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="mainSearch" 
+                        placeholder="Search manufacturing companies, roles, or locations..."
+                        oninput="performSearch()"
+                    >
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                        Search Jobs
+                    </button>
+                </form>
+            </div>
+
+            <!-- Category Grid -->
+            <div class="category-grid">
+                <div class="category-card active" onclick="selectCategory('manufacturing', event)">
+                    <span class="category-icon">🏭</span>
+                    <h3 class="category-title">Manufacturing</h3>
+                    <p class="category-count">900+ Companies</p>
+                    <p class="category-description">General manufacturing and industrial companies</p>
+                </div>
+                <div class="category-card" onclick="selectCategory('automotive', event)">
+                    <span class="category-icon">🚗</span>
+                    <h3 class="category-title">Automotive</h3>
+                    <p class="category-count">300+ Companies</p>
+                    <p class="category-description">Car, bike, and auto component manufacturers</p>
+                </div>
+                <div class="category-card" onclick="selectCategory('electronics', event)">
+                    <span class="category-icon">📱</span>
+                    <h3 class="category-title">Electronics</h3>
+                    <p class="category-count">200+ Companies</p>
+                    <p class="category-description">Consumer electronics and semiconductor companies</p>
+                </div>
+                <div class="category-card" onclick="selectCategory('textiles', event)">
+                    <span class="category-icon">🧵</span>
+                    <h3 class="category-title">Textiles</h3>
+                    <p class="category-count">150+ Companies</p>
+                    <p class="category-description">Textile, garment, and fashion manufacturers</p>
+                </div>
+                <div class="category-card" onclick="selectCategory('chemicals', event)">
+                    <span class="category-icon">🧪</span>
+                    <h3 class="category-title">Chemicals</h3>
+                    <p class="category-count">100+ Companies</p>
+                    <p class="category-description">Chemical, pharmaceutical, and petrochemical companies</p>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">
+                            All Filters 
+                            <span class="clear-filters" onclick="clearFilters()">Clear All</span>
+                        </h3>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">Company Type</h3>
+                        <div class="filter-option">
+                            <input type="checkbox" id="foreign-manufacturing" checked onchange="applyFilter()">
+                            <label for="foreign-manufacturing">Foreign Manufacturing</label>
+                            <span class="filter-count">(500)</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="indian-manufacturing" checked onchange="applyFilter()">
+                            <label for="indian-manufacturing">Indian Manufacturing</label>
+                            <span class="filter-count">(400)</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="corporate" onchange="applyFilter()">
+                            <label for="corporate">Corporate</label>
+                            <span class="filter-count">(700)</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="sme" onchange="applyFilter()">
+                            <label for="sme">SME</label>
+                            <span class="filter-count">(200)</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">Company Size</h3>
+                        <div class="filter-option">
+                            <input type="checkbox" id="large" onchange="applyFilter()">
+                            <label for="large">Large (10,000+ employees)</label>
+                            <span class="filter-count">(150)</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="medium" onchange="applyFilter()">
+                            <label for="medium">Medium (1,000-10,000)</label>
+                            <span class="filter-count">(300)</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="small" onchange="applyFilter()">
+                            <label for="small">Small (100-1,000)</label>
+                            <span class="filter-count">(450)</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">Location</h3>
+                        <input type="text" class="location-search" placeholder="Search locations..." id="locationSearch" oninput="filterLocations()">
+                        <div class="filter-option">
+                            <input type="checkbox" id="bengaluru" onchange="applyFilter()">
+                            <label for="bengaluru">Bengaluru</label>
+                            <span class="filter-count">(400)</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="delhi" onchange="applyFilter()">
+                            <label for="delhi">Delhi / NCR</label>
+                            <span class="filter-count">(300)</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="mumbai" onchange="applyFilter()">
+                            <label for="mumbai">Mumbai</label>
+                            <span class="filter-count">(250)</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="chennai" onchange="applyFilter()">
+                            <label for="chennai">Chennai</label>
+                            <span class="filter-count">(200)</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="pune" onchange="applyFilter()">
+                            <label for="pune">Pune</label>
+                            <span class="filter-count">(180)</span>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Companies Section -->
+                <section class="companies-section">
+                    <div class="results-header">
+                        <div class="results-count">Showing <span id="companyCount">0</span> companies</div>
+                        <select class="sort-dropdown" id="sortBy" onchange="sortCompanies()">
+                            <option value="relevance">Sort by Relevance</option>
+                            <option value="rating">Sort by Rating</option>
+                            <option value="name">Sort by Name</option>
+                            <option value="jobs">Sort by Job Count</option>
+                        </select>
+                    </div>
+
+                    <div class="company-grid" id="companyGrid">
+                        <!-- Companies will be dynamically populated -->
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="cta-section">
+                        <div class="cta-content">
+                            <div class="cta-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h2 class="cta-title">Ready to Launch Your Manufacturing Career?</h2>
+                            <p class="cta-text">Join thousands of professionals who found their dream jobs through Jobify. Create your profile and get discovered by top manufacturing companies.</p>
+                            <button class="cta-button" onclick="showNotification('Registration feature coming soon!', 'info')">
+                                <i class="fas fa-user-plus" style="margin-right: 8px;"></i>
+                                Create Free Profile
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+  {% include 'footer.html' %}
+
+    <script>
+        // Enhanced company data with more details
+        const companies = [
+            {
+                name: "Tata Motors",
+                logo: "🚗",
+                color: "#003087",
+                rating: 4.0,
+                reviews: "2.5K+",
+                tags: ["Automotive", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "automotive",
+                locations: ["Mumbai", "Bengaluru", "Pune"],
+                founded: 1945,
+                employees: "50,000+",
+                jobCount: 245,
+                size: "large"
+            },
+            {
+                name: "Bajaj Auto",
+                logo: "🏍",
+                color: "#FF4500",
+                rating: 3.9,
+                reviews: "1.8K+",
+                tags: ["Automotive", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "automotive",
+                locations: ["Pune", "Delhi / NCR"],
+                founded: 1945,
+                employees: "12,000+",
+                jobCount: 156,
+                size: "large"
+            },
+            {
+                name: "Reliance Industries",
+                logo: "🏭",
+                color: "#FF4500",
+                rating: 3.9,
+                reviews: "4K+",
+                tags: ["Chemicals", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "chemicals",
+                locations: ["Mumbai", "Delhi / NCR"],
+                founded: 1966,
+                employees: "195,000+",
+                jobCount: 389,
+                size: "large"
+            },
+            {
+                name: "Samsung Electronics",
+                logo: "📱",
+                color: "#1428A0",
+                rating: 4.2,
+                reviews: "3K+",
+                tags: ["Electronics", "Foreign Manufacturing", "Corporate"],
+                type: "foreign",
+                category: "electronics",
+                locations: ["Bengaluru", "Delhi / NCR", "Chennai"],
+                founded: 1969,
+                employees: "70,000+",
+                jobCount: 298,
+                size: "large"
+            },
+            {
+                name: "Foxconn",
+                logo: "🔧",
+                color: "#00A1E4",
+                rating: 3.8,
+                reviews: "2.2K+",
+                tags: ["Electronics", "Foreign Manufacturing", "Corporate"],
+                type: "foreign",
+                category: "electronics",
+                locations: ["Chennai", "Bengaluru"],
+                founded: 1974,
+                employees: "1,300,000+",
+                jobCount: 445,
+                size: "large"
+            },
+            {
+                name: "Aditya Birla Group",
+                logo: "🧵",
+                color: "#D81F26",
+                rating: 4.0,
+                reviews: "1.5K+",
+                tags: ["Textiles", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "textiles",
+                locations: ["Mumbai", "Bengaluru"],
+                founded: 1857,
+                employees: "120,000+",
+                jobCount: 178,
+                size: "large"
+            },
+            {
+                name: "Siemens",
+                logo: "⚙",
+                color: "#009999",
+                rating: 4.1,
+                reviews: "1.9K+",
+                tags: ["Industrial", "Foreign Manufacturing", "Corporate"],
+                type: "foreign",
+                category: "manufacturing",
+                locations: ["Bengaluru", "Mumbai", "Chennai"],
+                founded: 1847,
+                employees: "9,000+",
+                jobCount: 134,
+                size: "large"
+            },
+            {
+                name: "Maruti Suzuki",
+                logo: "🚙",
+                color: "#D40000",
+                rating: 4.0,
+                reviews: "2.8K+",
+                tags: ["Automotive", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "automotive",
+                locations: ["Delhi / NCR", "Mumbai"],
+                founded: 1981,
+                employees: "17,000+",
+                jobCount: 267,
+                size: "large"
+            },
+            {
+                name: "Larsen & Toubro",
+                logo: "🏗",
+                color: "#0033A0",
+                rating: 4.1,
+                reviews: "2K+",
+                tags: ["Industrial", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "manufacturing",
+                locations: ["Mumbai", "Bengaluru", "Chennai"],
+                founded: 1938,
+                employees: "45,000+",
+                jobCount: 356,
+                size: "large"
+            },
+            {
+                name: "BASF",
+                logo: "🧪",
+                color: "#005662",
+                rating: 4.0,
+                reviews: "1.2K+",
+                tags: ["Chemicals", "Foreign Manufacturing", "Corporate"],
+                type: "foreign",
+                category: "chemicals",
+                locations: ["Mumbai", "Bengaluru"],
+                founded: 1865,
+                employees: "2,500+",
+                jobCount: 89,
+                size: "medium"
+            },
+            {
+                name: "Mahindra & Mahindra",
+                logo: "🚜",
+                color: "#C8102E",
+                rating: 3.8,
+                reviews: "3.1K+",
+                tags: ["Automotive", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "automotive",
+                locations: ["Mumbai", "Chennai", "Delhi / NCR"],
+                founded: 1945,
+                employees: "25,000+",
+                jobCount: 198,
+                size: "large"
+            },
+            {
+                name: "Bosch",
+                logo: "🔩",
+                color: "#E4002B",
+                rating: 4.3,
+                reviews: "1.7K+",
+                tags: ["Automotive", "Foreign Manufacturing", "Corporate"],
+                type: "foreign",
+                category: "automotive",
+                locations: ["Bengaluru", "Chennai", "Pune"],
+                founded: 1886,
+                employees: "31,000+",
+                jobCount: 223,
+                size: "large"
+            },
+            {
+                name: "Hindustan Unilever",
+                logo: "🧴",
+                color: "#0F4FA8",
+                rating: 4.2,
+                reviews: "2.4K+",
+                tags: ["FMCG", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "manufacturing",
+                locations: ["Mumbai", "Bengaluru", "Delhi / NCR"],
+                founded: 1933,
+                employees: "19,000+",
+                jobCount: 167,
+                size: "large"
+            },
+            {
+                name: "Asian Paints",
+                logo: "🎨",
+                color: "#FF6B35",
+                rating: 4.1,
+                reviews: "1.3K+",
+                tags: ["Chemicals", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "chemicals",
+                locations: ["Mumbai", "Bengaluru"],
+                founded: 1942,
+                employees: "7,500+",
+                jobCount: 98,
+                size: "medium"
+            },
+            {
+                name: "Godrej Industries",
+                logo: "🏠",
+                color: "#00A651",
+                rating: 3.9,
+                reviews: "1.1K+",
+                tags: ["FMCG", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "manufacturing",
+                locations: ["Mumbai", "Chennai"],
+                founded: 1897,
+                employees: "28,000+",
+                jobCount: 145,
+                size: "large"
+            },
+            {
+                name: "Welspun Group",
+                logo: "🏭",
+                color: "#1E3A8A",
+                rating: 3.7,
+                reviews: "890",
+                tags: ["Textiles", "Indian Manufacturing", "Corporate"],
+                type: "indian",
+                category: "textiles",
+                locations: ["Mumbai", "Delhi / NCR"],
+                founded: 1985,
+                employees: "25,000+",
+                jobCount: 112,
+                size: "large"
+            }
+        ];
+
+        let filteredCompanies = [...companies];
+        let selectedCategory = 'manufacturing';
+        let visibleLocations = ['bengaluru', 'delhi', 'mumbai', 'chennai', 'pune'];
+
+        function renderCompanies() {
+            const grid = document.getElementById('companyGrid');
+            grid.innerHTML = '';
+
+            filteredCompanies.forEach((company, index) => {
+                const card = document.createElement('div');
+                card.className = 'company-card';
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                card.innerHTML = `
+                    <div class="company-header">
+                        <div class="company-logo" style="background-color: ${company.color}">
+                            ${company.logo}
+                        </div>
+                        <div class="company-info">
+                            <h3 class="company-name">${company.name}</h3>
+                            <div class="company-rating">
+                                <span class="rating-stars">★★★★★</span>
+                                <span class="rating-score">${company.rating}</span>
+                                <span class="rating-count">${company.reviews} reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="company-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            Founded ${company.founded}
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-users"></i>
+                            ${company.employees} employees
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            ${company.locations.length} locations
+                        </div>
+                    </div>
+                    
+                    <div class="company-tags">
+                        ${company.tags.map(tag => 
+                            `<span class="company-tag ${tag.includes('Manufacturing') ? 'highlight' : ''}">${tag}</span>`
+                        ).join('')}
+                    </div>
+                    
+                    <div class="company-actions">
+                        <button class="view-jobs-btn" onclick="viewJobs('${company.name}')">
+                            <i class="fas fa-briefcase" style="margin-right: 8px;"></i>
+                            View Jobs
+                        </button>
+                        <div class="job-count">${company.jobCount} jobs</div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+
+            document.getElementById('companyCount').textContent = filteredCompanies.length;
+        }
+
+        function selectCategory(category, event) {
+            selectedCategory = category;
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            event.target.closest('.category-card').classList.add('active');
+            
+            applyFilter();
+        }
+
+        function applyFilter() {
+            const foreignChecked = document.getElementById('foreign-manufacturing').checked;
+            const indianChecked = document.getElementById('indian-manufacturing').checked;
+            const corporateChecked = document.getElementById('corporate').checked;
+            const smeChecked = document.getElementById('sme').checked;
+            const largeChecked = document.getElementById('large')?.checked || false;
+            const mediumChecked = document.getElementById('medium')?.checked || false;
+            const smallChecked = document.getElementById('small')?.checked || false;
+            const bengaluruChecked = document.getElementById('bengaluru').checked;
+            const delhiChecked = document.getElementById('delhi').checked;
+            const mumbaiChecked = document.getElementById('mumbai').checked;
+            const chennaiChecked = document.getElementById('chennai')?.checked || false;
+            const puneChecked = document.getElementById('pune')?.checked || false;
+            const searchQuery = document.getElementById('mainSearch').value.toLowerCase().trim();
+            const locationQuery = document.getElementById('locationSearch').value.toLowerCase().trim();
+
+            // Start with companies from selected category
+            let categoryFiltered = companies.filter(company => {
+                if (selectedCategory === 'manufacturing') {
+                    return company.category === 'manufacturing' || company.tags.includes('Industrial') || company.tags.includes('FMCG');
+                } else if (selectedCategory === 'automotive') {
+                    return company.tags.includes('Automotive');
+                } else if (selectedCategory === 'electronics') {
+                    return company.tags.includes('Electronics');
+                } else if (selectedCategory === 'textiles') {
+                    return company.tags.includes('Textiles');
+                } else if (selectedCategory === 'chemicals') {
+                    return company.tags.includes('Chemicals');
+                }
+                return true;
+            });
+
+            // Apply company type filters
+            let filteredByType = categoryFiltered;
+            if (foreignChecked || indianChecked || corporateChecked || smeChecked) {
+                filteredByType = categoryFiltered.filter(company => {
+                    let matchesType = false;
+                    if (foreignChecked && company.type === 'foreign') matchesType = true;
+                    if (indianChecked && company.type === 'indian') matchesType = true;
+                    if (corporateChecked && company.tags.includes('Corporate')) matchesType = true;
+                    if (smeChecked && company.tags.includes('SME')) matchesType = true;
+                    return matchesType;
+                });
+            }
+
+            // Apply size filters
+            let filteredBySize = filteredByType;
+            if (largeChecked || mediumChecked || smallChecked) {
+                filteredBySize = filteredByType.filter(company => {
+                    let matchesSize = false;
+                    if (largeChecked && company.size === 'large') matchesSize = true;
+                    if (mediumChecked && company.size === 'medium') matchesSize = true;
+                    if (smallChecked && company.size === 'small') matchesSize = true;
+                    return matchesSize;
+                });
+            }
+
+            // Apply location filters
+            let filteredByLocation = filteredBySize;
+            if (bengaluruChecked || delhiChecked || mumbaiChecked || chennaiChecked || puneChecked) {
+                filteredByLocation = filteredBySize.filter(company => {
+                    let matchesLocation = false;
+                    if (bengaluruChecked && company.locations.includes('Bengaluru')) matchesLocation = true;
+                    if (delhiChecked && company.locations.includes('Delhi / NCR')) matchesLocation = true;
+                    if (mumbaiChecked && company.locations.includes('Mumbai')) matchesLocation = true;
+                    if (chennaiChecked && company.locations.includes('Chennai')) matchesLocation = true;
+                    if (puneChecked && company.locations.includes('Pune')) matchesLocation = true;
+                    return matchesLocation;
+                });
+            }
+
+            // Apply search query
+            filteredCompanies = filteredByLocation.filter(company => {
+                if (!searchQuery) return true;
+                return (
+                    company.name.toLowerCase().includes(searchQuery) ||
+                    company.tags.some(tag => tag.toLowerCase().includes(searchQuery)) ||
+                    company.locations.some(location => location.toLowerCase().includes(searchQuery))
+                );
+            });
+
+            // Apply location search query
+            if (locationQuery) {
+                filteredCompanies = filteredCompanies.filter(company =>
+                    company.locations.some(location => location.toLowerCase().includes(locationQuery))
+                );
+            }
+
+            renderCompanies();
+        }
+
+        function sortCompanies() {
+            const sortBy = document.getElementById('sortBy').value;
+            
+            filteredCompanies.sort((a, b) => {
+                switch (sortBy) {
+                    case 'rating':
+                        return b.rating - a.rating;
+                    case 'name':
+                        return a.name.localeCompare(b.name);
+                    case 'jobs':
+                        return b.jobCount - a.jobCount;
+                    default:
+                        return 0;
+                }
+            });
+            
+            renderCompanies();
+        }
+
+        function filterLocations() {
+            const query = document.getElementById('locationSearch').value.toLowerCase().trim();
+            const locationOptions = document.querySelectorAll('.filter-section:last-child .filter-option');
+            
+            visibleLocations = ['bengaluru', 'delhi', 'mumbai', 'chennai', 'pune'].filter(location => 
+                location.toLowerCase().includes(query)
+            );
+
+            locationOptions.forEach(option => {
+                const checkbox = option.querySelector('input[type="checkbox"]');
+                const isVisible = visibleLocations.includes(checkbox.id);
+                option.style.display = isVisible ? 'flex' : 'none';
+            });
+
+            applyFilter();
+        }
+
+        function clearFilters() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                cb.checked = ['foreign-manufacturing', 'indian-manufacturing'].includes(cb.id);
+            });
+            document.getElementById('locationSearch').value = '';
+            document.getElementById('mainSearch').value = '';
+            filterLocations();
+            applyFilter();
+        }
+
+        function performSearch() {
+            applyFilter();
+        }
+
+        function viewJobs(companyName) {
+            showNotification(`Viewing jobs at ${companyName}...`, 'info');
+            // In a real application, this would redirect to the company's job listings
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}" style="margin-right: 8px;"></i>
+                ${message}
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCompanies();
+            
+            // Add event listeners
+            document.getElementById('mainSearch').addEventListener('input', performSearch);
+            document.getElementById('mainSearch').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Header background on scroll
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            });
+
+            // Initialize with Manufacturing selected
+            selectCategory('manufacturing', { target: document.querySelector('.category-card.active') });
+        });
+
+        // Make functions globally available
+        window.selectCategory = selectCategory;
+        window.applyFilter = applyFilter;
+        window.sortCompanies = sortCompanies;
+        window.filterLocations = filterLocations;
+        window.clearFilters = clearFilters;
+        window.performSearch = performSearch;
+        window.viewJobs = viewJobs;
+        window.showNotification = showNotification;
+    </script>
+</body>
+</html>

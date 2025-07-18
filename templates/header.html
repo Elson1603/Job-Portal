@@ -1,0 +1,447 @@
+<!-- #HEADER -->
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <!-- Logo -->
+      <a href="#" class="logo">Jobify</a>
+
+      <!-- Hamburger Menu Button -->
+      <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <ul class="nav-links desktop-nav">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="info.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+      </ul>
+
+      <!-- Right Side User/Login -->
+      <ul class="navbar-nav desktop-nav">
+        {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle username-display" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="user-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              {{ user.username }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/logout/">Logout</a></li>
+            </ul>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link login-button" href="login.html">Login</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile Sidebar -->
+  <div class="mobile-sidebar" id="mobile-sidebar">
+    <div class="sidebar-header">
+      <h3>Menu</h3>
+      <button class="close-sidebar" id="close-sidebar" aria-label="Close navigation menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="info.html" class="mobile-nav-link">About</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+    </ul>
+
+    <div class="mobile-user-section">
+      {% if user.is_authenticated %}
+        <div class="mobile-user-info">
+          <div class="mobile-user-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="mobile-user-details">
+            <span class="mobile-username">{{ user.username }}</span>
+            <span class="mobile-user-label">Logged in</span>
+          </div>
+        </div>
+        <ul class="mobile-user-menu">
+          <li><a href="profile.html" class="mobile-menu-item">
+            <i class="fas fa-user-circle"></i>
+            My Profile
+          </a></li>
+          <li><a href="/logout/" class="mobile-menu-item mobile-logout">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </a></li>
+        </ul>
+      {% else %}
+        <div class="mobile-login-section">
+          <a href="login.html" class="mobile-login-button">
+            <i class="fas fa-sign-in-alt"></i>
+            Sign In
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Overlay for mobile sidebar -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+</header>
+
+<style>
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #000; /* Adjust as per your theme */
+  }
+
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #000; /* Adjust as per your theme */
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+  }
+
+  .user-avatar i {
+    margin-right: 5px;
+  }
+
+  .login-button {
+    text-decoration: none;
+    color: #000; /* Adjust as per your theme */
+  }
+
+  /* Hamburger Menu Styles */
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+
+  .hamburger-line {
+    width: 100%;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Mobile Sidebar */
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    z-index: 1002;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-sidebar.active {
+    right: 0;
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fafafa;
+  }
+
+  .sidebar-header h3 {
+    margin: 0;
+    color: #000;
+    font-weight: 700;
+  }
+
+  .close-sidebar {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #737373;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.15s ease;
+  }
+
+  .close-sidebar:hover {
+    color: #f97316;
+    background: rgba(249, 115, 22, 0.1);
+  }
+
+  .mobile-nav-links {
+    list-style: none;
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 1rem;
+    color: #404040;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 0.75rem;
+    transition: all 0.15s ease;
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile-nav-link:hover {
+    background: rgba(249, 115, 22, 0.1);
+    color: #f97316;
+  }
+
+  .mobile-user-section {
+    margin-top: auto;
+    padding: 1.5rem;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .mobile-user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-user-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+  }
+
+  .mobile-user-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-username {
+    font-weight: 600;
+    color: #000;
+    font-size: 1.1rem;
+  }
+
+  .mobile-user-label {
+    color: #737373;
+    font-size: 0.875rem;
+  }
+
+  .mobile-user-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    color: #404040;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    transition: all 0.15s ease;
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile-menu-item:hover {
+    background: rgba(249, 115, 22, 0.1);
+    color: #f97316;
+  }
+
+  .mobile-logout {
+    color: #dc2626;
+  }
+
+  .mobile-logout:hover {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+  }
+
+  .mobile-login-section {
+    text-align: center;
+  }
+
+  .mobile-login-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.3);
+  }
+
+  .mobile-login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
+    color: #fff;
+  }
+
+  /* Sidebar Overlay */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .hamburger-menu {
+      display: flex;
+    }
+
+    .navbar {
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .mobile-sidebar {
+      width: 100%;
+      right: -100%;
+    }
+  }
+</style>
+
+<script>
+  // Mobile sidebar functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+
+    // Open sidebar
+    hamburgerMenu.addEventListener('click', function() {
+      mobileSidebar.classList.add('active');
+      sidebarOverlay.classList.add('active');
+      hamburgerMenu.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+
+    // Close sidebar
+    function closeSidebarFunction() {
+      mobileSidebar.classList.remove('active');
+      sidebarOverlay.classList.remove('active');
+      hamburgerMenu.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    closeSidebar.addEventListener('click', closeSidebarFunction);
+    sidebarOverlay.addEventListener('click', closeSidebarFunction);
+
+    // Close sidebar when clicking on mobile nav links
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', closeSidebarFunction);
+    });
+
+    // Close sidebar when clicking on mobile menu items
+    mobileMenuItems.forEach(item => {
+      item.addEventListener('click', closeSidebarFunction);
+    });
+
+    // Close sidebar on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
+        closeSidebarFunction();
+      }
+    });
+  });
+</script>

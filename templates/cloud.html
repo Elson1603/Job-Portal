@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary meta tags -->
+  <title>Jobify - Cloud Architect Jobs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="title" content="Jobify - Cloud Architect Jobs">
+  <meta name="description" content="Find the best cloud architect jobs with our modern job portal">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Black and Orange Color System */
+      --primary-50: #fff7ed;
+      --primary-100: #ffedd5;
+      --primary-200: #fed7aa;
+      --primary-300: #fdba74;
+      --primary-400: #fb923c;
+      --primary-500: #f97316;
+      --primary-600: #ea580c;
+      --primary-700: #c2410c;
+      --primary-800: #9a3412;
+      --primary-900: #7c2d12;
+
+      --secondary-50: #f8fafc;
+      --secondary-100: #f1f5f9;
+      --secondary-200: #e2e8f0;
+      --secondary-300: #cbd5e1;
+      --secondary-400: #94a3b8;
+      --secondary-500: #64748b;
+      --secondary-600: #475569;
+      --secondary-700: #334155;
+      --secondary-800: #1e293b;
+      --secondary-900: #0f172a;
+
+      --neutral-50: #fafafa;
+      --neutral-100: #f5f5f5;
+      --neutral-200: #e5e5e5;
+      --neutral-300: #d4d4d4;
+      --neutral-400: #a3a3a3;
+      --neutral-500: #737373;
+      --neutral-600: #525252;
+      --neutral-700: #404040;
+      --neutral-800: #262626;
+      --neutral-900: #171717;
+
+      --black: #000000;
+      --white: #ffffff;
+      --orange: #f97316;
+      --orange-light: #fb923c;
+      --orange-dark: #ea580c;
+
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+      --gradient-secondary: linear-gradient(135deg, var(--black) 0%, var(--neutral-800) 100%);
+      --gradient-accent: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 50%, var(--orange-dark) 100%);
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-orange: 0 10px 25px -5px rgba(249, 115, 22, 0.3);
+
+      /* Typography */
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      /* Spacing */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      /* Border Radius */
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --radius-full: 9999px;
+
+      /* Transitions */
+      --transition-fast: 150ms ease-in-out;
+      --transition-normal: 250ms ease-in-out;
+      --transition-slow: 350ms ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: linear-gradient(135deg, var(--neutral-50) 0%, var(--neutral-100) 100%);
+      color: var(--neutral-800);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header Styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      transition: var(--transition-normal);
+      height: 80px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) 0;
+      height: 80px;
+    }
+
+    .logo {
+      font-family: var(--font-secondary);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--orange);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* User Dropdown */
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .username-display {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-lg);
+      transition: var(--transition-fast);
+    }
+
+    .username-display:hover {
+      color: var(--orange);
+      background: rgba(249, 115, 22, 0.1);
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 0.875rem;
+    }
+
+    .dropdown-menu {
+      position: absolute !important;
+      top: 100% !important;
+      right: 0 !important;
+      z-index: 1050 !important;
+      min-width: 160px;
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .dropdown-menu.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-item {
+      display: block;
+      padding: var(--space-3) var(--space-4);
+      color: var(--neutral-700);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .dropdown-item:hover {
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--orange);
+    }
+
+    .dropdown-divider {
+      height: 1px;
+      background: var(--neutral-200);
+      border: none;
+      margin: var(--space-2) 0;
+    }
+
+    .login-button {
+      background: var(--gradient-primary);
+      color: var(--white);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-normal);
+      box-shadow: var(--shadow-orange);
+    }
+
+    .login-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
+      color: var(--white);
+    }
+
+    /* Main Content */
+    .main-content {
+      padding-top: 120px;
+      padding-bottom: var(--space-20);
+    }
+
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      margin-bottom: var(--space-16);
+      position: relative;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .page-title {
+      font-family: var(--font-secondary);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: var(--space-4);
+      position: relative;
+    }
+
+    .page-title .highlight {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    .page-title .highlight::after {
+      content: '☁️';
+      position: absolute;
+      right: -40px;
+      top: -10px;
+      font-size: 2rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--neutral-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Search Filter */
+    .search-filter {
+      background: var(--white);
+      padding: var(--space-8);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: var(--space-12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .search-filter::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+    }
+
+    .search-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-6);
+      align-items: end;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: var(--neutral-700);
+      margin-bottom: var(--space-2);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: var(--space-3) var(--space-4);
+      border: 2px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      font-size: 1rem;
+      transition: var(--transition-fast);
+      background: var(--white);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    }
+
+    .search-btn {
+      background: var(--gradient-primary);
+      color: var(--white);
+      border: none;
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-lg);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-normal);
+      box-shadow: var(--shadow-orange);
+      height: fit-content;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .search-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .search-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
+    }
+
+    .search-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Results Header */
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-8);
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    .jobs-count {
+      font-size: 1.1rem;
+      color: var(--neutral-700);
+      font-weight: 500;
+    }
+
+    .jobs-count strong {
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .sort-filter {
+      display: flex;
+      gap: var(--space-3);
+      align-items: center;
+    }
+
+    .sort-btn {
+      background: var(--white);
+      border: 2px solid var(--neutral-200);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-lg);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      color: var(--neutral-700);
+    }
+
+    .sort-btn:hover,
+    .sort-btn.active {
+      border-color: var(--orange);
+      color: var(--orange);
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    /* Jobs List */
+    .jobs-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: var(--space-8);
+      margin-bottom: var(--space-16);
+    }
+
+    .job-card {
+      background: var(--white);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-normal);
+      border: 1px solid var(--neutral-200);
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .job-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transition: var(--transition-normal);
+    }
+
+    .job-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .job-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .job-header {
+      padding: var(--space-8) var(--space-8) var(--space-6);
+      border-bottom: 1px solid var(--neutral-200);
+      position: relative;
+    }
+
+    .company-info {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+
+    .company-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Cloud-specific company logos */
+    .company-logo.aws { background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%); }
+    .company-logo.azure { background: linear-gradient(135deg, #0078d4 0%, #005a9f 100%); }
+    .company-logo.gcp { background: linear-gradient(135deg, #4285f4 0%, #ea4335 50%, #34a853 100%); }
+    .company-logo.multicloud { background: var(--gradient-primary); }
+    .company-logo.fintech { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+    .company-logo.healthcare { background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%); }
+    .company-logo.enterprise { background: var(--gradient-secondary); }
+    .company-logo.devops { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+    .company-logo.ml { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+    .company-logo.security { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+
+    .company-details h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--neutral-600);
+      margin-bottom: var(--space-1);
+    }
+
+    .company-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--neutral-800);
+    }
+
+    .job-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: var(--space-3);
+      line-height: 1.3;
+    }
+
+    .job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      color: var(--neutral-600);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .job-body {
+      padding: var(--space-6) var(--space-8);
+    }
+
+    .job-description {
+      color: var(--neutral-700);
+      line-height: 1.6;
+      margin-bottom: var(--space-4);
+    }
+
+    .job-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .skill-tag {
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--orange);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(249, 115, 22, 0.2);
+      transition: var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .skill-tag:hover {
+      background: rgba(249, 115, 22, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .skill-tag:hover::before {
+      left: 100%;
+    }
+
+    .job-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-6) var(--space-8);
+      background: var(--gradient-secondary);
+      color: var(--white);
+    }
+
+    .salary-range {
+      font-weight: 700;
+      color: var(--orange);
+      font-size: 1.1rem;
+    }
+
+    .job-actions {
+      display: flex;
+      gap: var(--space-3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--neutral-600);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-lg);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .btn-secondary:hover {
+      color: var(--orange);
+      border-color: var(--orange);
+      background: rgba(249, 115, 22, 0.1);
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: var(--white);
+      border: none;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-normal);
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.4);
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    /* Pagination */
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-12);
+    }
+
+    .pagination {
+      display: flex;
+      gap: var(--space-2);
+      align-items: center;
+      list-style: none;
+    }
+
+    .pagination-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      border: 1px solid var(--neutral-200);
+      background: var(--white);
+      color: var(--neutral-700);
+      text-decoration: none;
+      border-radius: var(--radius-lg);
+      font-weight: 500;
+      transition: var(--transition-fast);
+      padding: 0 var(--space-3);
+    }
+
+    .pagination-btn:hover,
+    .pagination-btn.active {
+      border-color: var(--orange);
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .search-form {
+        grid-template-columns: 1fr;
+      }
+
+      .jobs-list {
+        grid-template-columns: 1fr;
+      }
+
+      .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .job-footer {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+      }
+
+      .job-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .page-title .highlight::after {
+        right: -30px;
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .job-card:nth-child(1) { animation-delay: 0.1s; }
+    .job-card:nth-child(2) { animation-delay: 0.2s; }
+    .job-card:nth-child(3) { animation-delay: 0.3s; }
+    .job-card:nth-child(4) { animation-delay: 0.4s; }
+    .job-card:nth-child(5) { animation-delay: 0.5s; }
+    .job-card:nth-child(6) { animation-delay: 0.6s; }
+    .job-card:nth-child(7) { animation-delay: 0.7s; }
+    .job-card:nth-child(8) { animation-delay: 0.8s; }
+
+    /* Notification Styles */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: var(--space-4) var(--space-5);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      z-index: 1000;
+      animation: slideIn 0.3s ease;
+      max-width: 300px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .notification-success {
+      background: #10b981;
+      color: white;
+    }
+
+    .notification-info {
+      background: var(--orange);
+      color: white;
+    }
+
+    .notification-error {
+      background: #ef4444;
+      color: white;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Focus States for Accessibility */
+    .btn-primary:focus,
+    .btn-secondary:focus,
+    .job-card:focus,
+    input:focus,
+    select:focus {
+      outline: 2px solid var(--orange);
+      outline-offset: 2px;
+    }
+
+    /* Special Cloud Elements */
+    .tech-badge {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      background: var(--gradient-primary);
+      color: var(--white);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .cloud-info {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      margin-top: var(--space-2);
+      transition: var(--transition-fast);
+    }
+
+    .cloud-info:hover {
+      color: var(--orange-dark);
+      transform: translateX(2px);
+    }
+
+    .cert-indicator {
+      background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+      color: var(--white);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-left: var(--space-2);
+    }
+
+    .footer {
+      background: var(--gradient-secondary);
+      color: var(--white);
+      padding: var(--space-20) 0 var(--space-8);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-12);
+      margin-bottom: var(--space-12);
+    }
+
+    .footer-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--space-6);
+      color: var(--white);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: var(--space-3);
+    }
+
+    .footer-links a {
+      color: var(--neutral-300);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(249, 115, 22, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      text-decoration: none;
+      transition: var(--transition-normal);
+    }
+
+    .social-link:hover {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--neutral-700);
+      padding-top: var(--space-8);
+      text-align: center;
+      color: var(--neutral-400);
+    }
+
+  </style>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="static/favicon.png" type="image/svg+xml">
+</head>
+
+<body>
+  <!-- Header -->
+  {% include "header.html" %}
+
+  <main>
+    <div class="container main-content">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title"><span class="highlight">Cloud Architect</span> Jobs</h1>
+        <p class="page-subtitle">Design scalable cloud infrastructure with leading technology companies worldwide</p>
+      </div>
+
+      <!-- Search Filter -->
+      <div class="search-filter">
+        <form class="search-form">
+          <div class="form-group">
+            <label for="keyword">
+              <i class="fas fa-search"></i>
+              Keywords
+            </label>
+            <input type="text" id="keyword" placeholder="Job title, skills or company" value="Cloud Architect">
+          </div>
+          <div class="form-group">
+            <label for="location">
+              <i class="fas fa-map-marker-alt"></i>
+              Location
+            </label>
+            <input type="text" id="location" placeholder="City, state or remote">
+          </div>
+          <div class="form-group">
+            <label for="experience">
+              <i class="fas fa-chart-line"></i>
+              Experience
+            </label>
+            <select id="experience">
+              <option value="">Any experience</option>
+              <option value="mid">Mid Level (3-5 years)</option>
+              <option value="senior" selected>Senior Level (5+ years)</option>
+              <option value="lead">Lead/Principal (7+ years)</option>
+              <option value="architect">Architect (10+ years)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="job-type">
+              <i class="fas fa-briefcase"></i>
+              Job Type
+            </label>
+            <select id="job-type">
+              <option value="">All types</option>
+              <option value="full-time">Full-time</option>
+              <option value="part-time">Part-time</option>
+              <option value="contract">Contract</option>
+              <option value="remote">Remote</option>
+            </select>
+          </div>
+          <button type="submit" class="search-btn">
+            <i class="fas fa-search" style="margin-right: 8px;"></i>
+            Search Jobs
+          </button>
+        </form>
+      </div>
+
+      <!-- Results Section -->
+      <div class="results-header">
+        <div class="jobs-count">
+          <strong>34</strong> Cloud Architect jobs found
+        </div>
+        <div class="sort-filter">
+          <button class="sort-btn active">Relevance</button>
+          <button class="sort-btn">Date</button>
+          <button class="sort-btn">Salary</button>
+          <button class="sort-btn">Experience</button>
+        </div>
+      </div>
+
+      <div class="jobs-list">
+        <!-- Job Card 1 -->
+        <article class="job-card">
+          <div class="tech-badge">Featured</div>
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo aws">AWS</div>
+              <div class="company-details">
+                <h4>Cloud Platform</h4>
+                <div class="company-name">TechCorp Solutions</div>
+              </div>
+            </div>
+            <h3 class="job-title">Senior Cloud Architect - AWS <span class="cert-indicator">AWS Certified</span></h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Seattle, WA (Hybrid)</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>1 day ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Design and implement scalable cloud infrastructure solutions on AWS. Lead cloud migration projects, optimize costs, and ensure security best practices across multi-account environments serving enterprise clients.
+            </p>
+            <a href="#" class="cloud-info">
+              <i class="fas fa-cloud"></i>
+              Enterprise Cloud Solutions
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Infrastructure as Code</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Cloud Security</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$150,000 - $190,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 2 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo multicloud">MC</div>
+              <div class="company-details">
+                <h4>Multi-Cloud Platform</h4>
+                <div class="company-name">Microsoft Azure Partner</div>
+              </div>
+            </div>
+            <h3 class="job-title">Cloud Architect - Multi-Cloud</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Remote (US)</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Today</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Architect hybrid and multi-cloud solutions across AWS, Azure, and GCP. Design disaster recovery strategies, implement cloud governance, and ensure seamless integration between cloud platforms.
+            </p>
+            <a href="#" class="cloud-info">
+              <i class="fas fa-network-wired"></i>
+              Hybrid Cloud Architecture
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Multi-Cloud</span>
+              <span class="skill-tag">Azure</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">GCP</span>
+              <span class="skill-tag">Hybrid Cloud</span>
+            </div>
+          </div>
+          <div class="job-footer" style="    margin-top: 46px;">
+            <div class="salary-range">$160,000 - $200,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 3 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo fintech">FS</div>
+              <div class="company-details">
+                <h4>FinTech</h4>
+                <div class="company-name">FinanceStream</div>
+              </div>
+            </div>
+            <h3 class="job-title">Principal Cloud Architect - FinTech <span class="cert-indicator">PCI DSS</span></h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>New York, NY</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>2 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Lead cloud architecture for financial services platform processing billions in transactions. Ensure PCI DSS compliance, design fault-tolerant systems, and implement advanced security measures.
+            </p>
+            <a href="#" class="cloud-info">
+              <i class="fas fa-shield-alt"></i>
+              Financial Cloud Security
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Cloud Security</span>
+              <span class="skill-tag">PCI DSS</span>
+              <span class="skill-tag">High Availability</span>
+              <span class="skill-tag">Microservices</span>
+              <span class="skill-tag">DevSecOps</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$180,000 - $220,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 4 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo gcp">DT</div>
+              <div class="company-details">
+                <h4>Data Platform</h4>
+                <div class="company-name">DataTech Analytics</div>
+              </div>
+            </div>
+            <h3 class="job-title">Cloud Solutions Architect - Data</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>San Francisco, CA (Hybrid)</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>3 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Design cloud-native data architectures for big data analytics and ML workloads. Build data lakes, streaming pipelines, and ensure optimal performance for petabyte-scale data processing.
+            </p>
+            <a href="#" class="cloud-info">
+              <i class="fas fa-database"></i>
+              Big Data Cloud Architecture
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Data Architecture</span>
+              <span class="skill-tag">Data Lakes</span>
+              <span class="skill-tag">Apache Spark</span>
+              <span class="skill-tag">Streaming</span>
+              <span class="skill-tag">GCP</span>
+            </div>
+          </div>
+          <div class="job-footer" style="margin-top: 26px;">
+            <div class="salary-range">$165,000 - $205,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 5 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo healthcare">EH</div>
+              <div class="company-details">
+                <h4>Healthcare</h4>
+                <div class="company-name">eHealth Systems</div>
+              </div>
+            </div>
+            <h3 class="job-title">Cloud Architect - Healthcare <span class="cert-indicator">HIPAA</span></h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Boston, MA (Remote)</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>4 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Architect HIPAA-compliant cloud solutions for healthcare applications. Design secure, scalable systems for patient data, telemedicine platforms, and medical device integration with strict regulatory requirements.
+            </p>
+            <a href="#" class="cloud-info">
+              <i class="fas fa-user-md"></i>
+              Healthcare Cloud Compliance
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">HIPAA Compliance</span>
+              <span class="skill-tag">Healthcare IT</span>
+              <span class="skill-tag">Data Encryption</span>
+              <span class="skill-tag">API Security</span>
+              <span class="skill-tag">Audit Logging</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$155,000 - $185,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 6 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo enterprise">CS</div>
+              <div class="company-details">
+                <h4>Enterprise</h4>
+                <div class="company-name">CloudScale Enterprise</div>
+              </div>
+            </div>
+            <h3 class="job-title">Enterprise Cloud Architect</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Austin, TX</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>1 week ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Lead enterprise cloud transformation initiatives for Fortune 500 clients. Design complex cloud architectures, manage large-scale migrations, and establish cloud governance frameworks.
+            </p>
+            <a href="#" class="cloud-info">
+              <i class="fas fa-building"></i>
+              Enterprise Cloud Transformation
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">Enterprise Architecture</span>
+              <span class="skill-tag">Cloud Migration</span>
+              <span class="skill-tag">Governance</span>
+              <span class="skill-tag">Cost Optimization</span>
+              <span class="skill-tag">Compliance</span>
+            </div>
+          </div>
+          <div class="job-footer" style="margin-top: 26px;">
+            <div class="salary-range">$170,000 - $210,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 7 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo devops">SO</div>
+              <div class="company-details">
+                <h4>DevOps Platform</h4>
+                <div class="company-name">ScaleOps</div>
+              </div>
+            </div>
+            <h3 class="job-title">Cloud Architect - DevOps & SRE</h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Remote (Global)</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>5 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Design cloud infrastructure with focus on reliability, observability, and automation. Build CI/CD pipelines, implement monitoring solutions, and ensure 99.99% uptime for mission-critical applications.
+            </p>
+            <a href="#" class="cloud-info">
+              <i class="fas fa-cogs"></i>
+              DevOps Cloud Infrastructure
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">DevOps</span>
+              <span class="skill-tag">SRE</span>
+              <span class="skill-tag">Monitoring</span>
+              <span class="skill-tag">Automation</span>
+              <span class="skill-tag">CI/CD</span>
+            </div>
+          </div>
+          <div class="job-footer" style="margin-top: 46px;">
+            <div class="salary-range">$145,000 - $175,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job Card 8 -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="company-info">
+              <div class="company-logo ml">AI</div>
+              <div class="company-details">
+                <h4>AI Platform</h4>
+                <div class="company-name">AI CloudTech</div>
+              </div>
+            </div>
+            <h3 class="job-title">Cloud Architect - AI/ML Platform <span class="cert-indicator">MLOps</span></h3>
+            <div class="job-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Palo Alto, CA (Hybrid)</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-briefcase" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>Full-time</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock" style="margin-right: 6px; color: var(--orange);"></i>
+                <span>6 days ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-body">
+            <p class="job-description">
+              Architect cloud infrastructure for AI/ML workloads at scale. Design GPU clusters, MLOps pipelines, and model serving infrastructure supporting thousands of ML models in production environments.
+            </p>
+            <a href="#" class="cloud-info">
+              <i class="fas fa-brain"></i>
+              AI/ML Cloud Infrastructure
+            </a>
+            <div class="job-skills">
+              <span class="skill-tag">MLOps</span>
+              <span class="skill-tag">GPU Computing</span>
+              <span class="skill-tag">Model Serving</span>
+              <span class="skill-tag">Distributed Systems</span>
+              <span class="skill-tag">Kubernetes</span>
+            </div>
+          </div>
+          <div class="job-footer">
+            <div class="salary-range">$175,000 - $215,000</div>
+            <div class="job-actions">
+              <button class="btn-secondary">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-primary">Apply Now</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Pagination -->
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+{% include "footer.html" %}
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Enhanced JavaScript interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all job cards
+      document.querySelectorAll('.job-card').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Header background on scroll
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+          header.style.background = 'rgba(255, 255, 255, 0.98)';
+        } else {
+          header.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
+      });
+
+      // Search functionality
+      const searchForm = document.querySelector('.search-form');
+      const searchBtn = document.querySelector('.search-btn');
+      
+      searchForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Searching...';
+        
+        // Simulate search delay
+        setTimeout(() => {
+          searchBtn.innerHTML = '<i class="fas fa-search" style="margin-right: 8px;"></i>Search Jobs';
+          showNotification('Search completed! 34 Cloud Architect jobs found.', 'success');
+        }, 1500);
+      });
+
+      // Apply button functionality
+      const applyButtons = document.querySelectorAll('.btn-primary');
+      applyButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+          showNotification(`Application started for: ${jobTitle}`, 'info');
+        });
+      });
+
+      // Save job functionality
+      const saveButtons = document.querySelectorAll('.btn-secondary');
+      saveButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+          const icon = this.querySelector('i');
+          
+          if (this.classList.contains('saved')) {
+            this.classList.remove('saved');
+            icon.className = 'far fa-heart';
+            showNotification(`${jobTitle} removed from saved jobs`, 'info');
+          } else {
+            this.classList.add('saved');
+            icon.className = 'fas fa-heart';
+            showNotification(`${jobTitle} saved to your list`, 'success');
+          }
+        });
+      });
+
+      // Sort functionality
+      const sortButtons = document.querySelectorAll('.sort-btn');
+      sortButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          sortButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          showNotification(`Sorted by ${this.textContent}`, 'info');
+        });
+      });
+
+      // Cloud info interactions
+      const cloudLinks = document.querySelectorAll('.cloud-info');
+      cloudLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+          showNotification(`Cloud architecture details for ${jobTitle} opened`, 'info');
+        });
+      });
+
+      // Notification system
+      function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.style.opacity = '0';
+          notification.style.transform = 'translateX(100%)';
+          setTimeout(() => notification.remove(), 300);
+        }, 3000);
+      }
+
+      // Add smooth scrolling to pagination
+      const paginationLinks = document.querySelectorAll('.pagination-btn');
+      paginationLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector('.page-header').scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Skill tag hover effects
+      const skillTags = document.querySelectorAll('.skill-tag');
+      skillTags.forEach(tag => {
+        tag.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        
+        tag.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Tech badge animation
+      const techBadges = document.querySelectorAll('.tech-badge');
+      techBadges.forEach(badge => {
+        setInterval(() => {
+          badge.style.transform = 'scale(1.1)';
+          setTimeout(() => {
+            badge.style.transform = 'scale(1)';
+          }, 200);
+        }, 3000);
+      });
+
+      // Cert indicator animations
+      const certIndicators = document.querySelectorAll('.cert-indicator');
+      certIndicators.forEach(indicator => {
+        setInterval(() => {
+          indicator.style.transform = 'scale(1.1)';
+          setTimeout(() => {
+            indicator.style.transform = 'scale(1)';
+          }, 200);
+        }, 4000);
+      });
+    });
+  </script>
+</body>
+</html>
