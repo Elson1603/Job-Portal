@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-(xj72jkphqvloi&s%i5!#vgm)9*w33zahexdh*0)+6hec9qe+^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://job-portal-r365.onrender.com', 'localhost', '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://job-portal-r365.onrender.com',
+]
+CSRF_COOKIE_SECURE = True  # Only send the CSRF cookie over HTTPS connections
+CSRF_COOKIE_HTTPONLY = True  # Helps prevent CSRF cookies from being accessed by JavaScript
+CSRF_USE_SESSIONS = True
 
 
 # Application definition
