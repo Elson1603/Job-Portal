@@ -3,6 +3,7 @@ social-auth-app-django # Required because 'social_django' is in INSTALLED_APPS
 social-auth-core # social-auth-app-django depends on this, so it's good to include explicitly or let pip resolve
 # Add Gunicorn for production deployment (recommended for Render)
 gunicorn
+WeasyPrint
 # If you plan to use a PostgreSQL database on Render (highly recommended over SQLite for production):
 # dj-database-url
 # psycopg2-binary
