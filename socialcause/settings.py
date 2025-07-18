@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(xj72jkphqvloi&s%i5!#vgm)9*w33zahexdh*0)+6hec9qe+^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://job-portal-r365.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['job-portal-r365.onrender.com', 'localhost', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://job-portal-r365.onrender.com',
