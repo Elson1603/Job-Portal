@@ -1,0 +1,72 @@
+[
+    {
+        "model": "socialcause.skill",
+        "pk": 1,
+        "fields": {
+            "name": "Python"
+        }
+    },
+    {
+        "model": "socialcause.skill",
+        "pk": 2,
+        "fields": {
+            "name": "JavaScript"
+        }
+    },
+    {
+        "model": "socialcause.skill",
+        "pk": 3,
+        "fields": {
+            "name": "React"
+        }
+    },
+    {
+        "model": "socialcause.skill",
+        "pk": 4,
+        "fields": {
+            "name": "Django"
+        }
+    },
+    {
+        "model": "socialcause.skill",
+        "pk": 5,
+        "fields": {
+            "name": "SQL"
+        }
+    },
+    {
+        "model": "socialcause.jobtype",
+        "pk": 1,
+        "fields": {
+            "name": "Full-time"
+        }
+    },
+    {
+        "model": "socialcause.jobtype",
+        "pk": 2,
+        "fields": {
+            "name": "Part-time"
+        }
+    },
+    {
+        "model": "socialcause.jobtype",
+        "pk": 3,
+        "fields": {
+            "name": "Remote"
+        }
+    },
+    {
+        "model": "socialcause.jobtype",
+        "pk": 4,
+        "fields": {
+            "name": "Contract"
+        }
+    },
+    {
+        "model": "socialcause.jobtype",
+        "pk": 5,
+        "fields": {
+            "name": "Internship"
+        }
+    }
+]
