@@ -4,6 +4,7 @@ social-auth-core # social-auth-app-django depends on this, so it's good to inclu
 # Add Gunicorn for production deployment (recommended for Render)
 gunicorn
 WeasyPrint
+whitenoise
 # If you plan to use a PostgreSQL database on Render (highly recommended over SQLite for production):
 # dj-database-url
 # psycopg2-binary
