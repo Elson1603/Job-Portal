@@ -285,7 +285,7 @@
         margin-bottom: var(--space-8);
     }
 
-    .btn-social {
+    .social-button .google-button {
         width: 100%;
         display: flex;
         align-items: center;
@@ -302,14 +302,14 @@
         margin-bottom: var(--space-3);
     }
 
-    .btn-social:hover {
+    .social-button .google-button:hover {
         border-color: var(--orange);
         color: var(--orange);
         transform: translateY(-1px);
         box-shadow: var(--shadow-md);
     }
 
-    .btn-social:last-child {
+   .social-button .google-button:last-child {
         margin-bottom: 0;
     }
 
@@ -490,14 +490,11 @@
 
             <!-- Social Login -->
             <div class="social-login">
-                <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn-social">
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="social-button google-button" style="margin-left: 73px;">
                     <i class="fab fa-google" style="color: #db4437;"></i>
                     Continue with Google
                 </a>
-                <a href="{% url 'social:begin' 'linkedin-oauth2' %}" class="btn-social">
-                    <i class="fab fa-linkedin" style="color: #0077b5;"></i>
-                    Continue with LinkedIn
-                </a>
+                
             </div>
 
             <!-- Sign Up Link -->
