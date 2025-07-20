@@ -152,4 +152,11 @@ STATICFILES_DIRS=[
 ]
 
 
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '649255611620-2cp598fqlr2t82icosgab6hrf6rbfi0m.apps.googleusercontent.com' # Replace with your Client ID
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Replace with your Client Secret
+
+
+LOGIN_URL = '/login.html' # Your custom login URL if you have one
+LOGIN_REDIRECT_URL = '/index.html' # Where to redirect after successful login
+LOGOUT_REDIRECT_URL = '/index.html' # Where to redirect after logout
 
